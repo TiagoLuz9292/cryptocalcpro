@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for CryptoCalc Pro — how we handle data, cookies, advertising, and your rights as a user.",
+  description: "Privacy Policy for TradeFeeCalc — how we handle data, cookies, advertising, and your rights as a user.",
   robots: { index: true, follow: true },
 };
 
 const LAST_UPDATED = "May 24, 2026";
-const CONTACT_EMAIL = "contact@cryptocalcpro.com";
-const SITE_URL = "https://cryptocalcpro.com";
+const CONTACT_EMAIL = "contact@tradefeecalc.com";
+const SITE_URL = "https://tradefeecalc.com";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -23,13 +23,13 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">1. Introduction</h2>
           <p>
-            This Privacy Policy explains how CryptoCalc Pro (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;),
+            This Privacy Policy explains how TradeFeeCalc (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;),
             operating at <span className="text-foreground">{SITE_URL}</span>, collects, uses, and protects
             information when you use our website. We are committed to being transparent about our
             data practices.
           </p>
           <p>
-            By using CryptoCalc Pro, you agree to the practices described in this policy. If you
+            By using TradeFeeCalc, you agree to the practices described in this policy. If you
             do not agree, please discontinue use of the site.
           </p>
         </section>
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-lg font-semibold text-foreground">2. Information We Collect</h2>
           <p>
             <span className="text-foreground font-medium">We do not collect personal information directly.</span>{" "}
-            CryptoCalc Pro has no user accounts, no registration forms, and no input fields that
+            TradeFeeCalc has no user accounts, no registration forms, and no input fields that
             ask for personal data. All calculator inputs are processed entirely within your browser
             and are never transmitted to our servers.
           </p>
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">3. Google AdSense and Advertising</h2>
           <p>
-            CryptoCalc Pro uses <span className="text-foreground font-medium">Google AdSense</span> to
+            TradeFeeCalc uses <span className="text-foreground font-medium">Google AdSense</span> to
             display advertisements. Google AdSense is a third-party advertising service operated by
             Google LLC.
           </p>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             including the DoubleClick cookie — to serve ads based on your prior visits to this site
             and other sites on the internet. This is known as interest-based or personalised
             advertising. Google&apos;s use of advertising cookies enables it and its partners to
-            serve ads based on your visit to CryptoCalc Pro and/or other websites.
+            serve ads based on your visit to TradeFeeCalc and/or other websites.
           </p>
           <p>
             <span className="text-foreground font-medium">Your opt-out options:</span>
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-lg font-semibold text-foreground">4. Google Analytics</h2>
           <p>
             We use <span className="text-foreground font-medium">Google Analytics</span> to understand
-            how visitors use CryptoCalc Pro. Google Analytics collects anonymised, aggregate data
+            how visitors use TradeFeeCalc. Google Analytics collects anonymised, aggregate data
             about page views, session duration, geographic region, and traffic sources. This data
             helps us improve the site and its content.
           </p>
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">5. Cookies</h2>
           <p>
-            Cookies are small text files stored on your device by your browser. CryptoCalc Pro
+            Cookies are small text files stored on your device by your browser. TradeFeeCalc
             itself does not set any first-party cookies. However, the third-party services we use
             (Google AdSense, Google Analytics) do set cookies on your device.
           </p>
@@ -183,7 +183,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">6. Affiliate Links and Disclosure</h2>
           <p>
-            CryptoCalc Pro contains affiliate links to cryptocurrency exchanges and other financial
+            TradeFeeCalc contains affiliate links to cryptocurrency exchanges and other financial
             services. This means that if you click one of these links and create an account or
             make a transaction, we may receive a commission or referral fee from that platform.
           </p>
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
           <p>
             Our site contains links to external websites, including cryptocurrency exchanges,
             trading platforms, and educational resources. These third-party sites are governed by
-            their own privacy policies. CryptoCalc Pro has no control over and accepts no
+            their own privacy policies. TradeFeeCalc has no control over and accepts no
             responsibility for the privacy practices of any external site.
           </p>
           <p>
@@ -250,7 +250,7 @@ export default function PrivacyPolicyPage() {
             </li>
           </ul>
           <p>
-            Because CryptoCalc Pro does not directly collect or store personal data, most of these
+            Because TradeFeeCalc does not directly collect or store personal data, most of these
             rights apply primarily to data held by Google (AdSense, Analytics). You can exercise
             your rights against Google directly through{" "}
             <a
@@ -264,7 +264,7 @@ export default function PrivacyPolicyPage() {
             .
           </p>
           <p>
-            To exercise any of these rights in relation to CryptoCalc Pro specifically, or for any
+            To exercise any of these rights in relation to TradeFeeCalc specifically, or for any
             privacy-related enquiry, contact us at{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
               {CONTACT_EMAIL}
@@ -290,7 +290,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">9. Children&apos;s Privacy</h2>
           <p>
-            CryptoCalc Pro is not directed at individuals under the age of 16. We do not
+            TradeFeeCalc is not directed at individuals under the age of 16. We do not
             knowingly collect any information from children. If you believe a child has provided
             personal data through this site, please contact us at{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
@@ -304,7 +304,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">10. Financial Disclaimer</h2>
           <p>
-            The tools, calculators, articles, and comparisons on CryptoCalc Pro are provided for
+            The tools, calculators, articles, and comparisons on TradeFeeCalc are provided for
             educational and informational purposes only. Nothing on this site constitutes financial
             advice, investment advice, or a recommendation to buy or sell any financial instrument.
             Trading cryptocurrencies and derivatives involves significant risk of loss. Always
@@ -323,7 +323,7 @@ export default function PrivacyPolicyPage() {
             this policy periodically.
           </p>
           <p>
-            Continued use of CryptoCalc Pro after any changes constitutes acceptance of the
+            Continued use of TradeFeeCalc after any changes constitutes acceptance of the
             updated policy.
           </p>
         </section>
@@ -346,7 +346,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="mt-12 pt-6 border-t border-border/50">
         <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-          ← Back to CryptoCalc Pro
+          ← Back to TradeFeeCalc
         </Link>
       </div>
     </div>

@@ -5,8 +5,8 @@ import { calculators } from "@/data/calculators";
 import { getAllPosts } from "@/lib/content/mdx";
 
 export const metadata: Metadata = {
-  title: "About CryptoCalc Pro",
-  description: "CryptoCalc Pro is a free suite of professional crypto trading calculators built by traders, for traders. Position sizing, liquidation prices, fees, drawdown, DCA and more.",
+  title: "About TradeFeeCalc",
+  description: "TradeFeeCalc is a free suite of professional crypto trading calculators built by traders, for traders. Position sizing, liquidation prices, fees, drawdown, DCA and more.",
   robots: { index: true, follow: true },
 };
 
@@ -29,7 +29,7 @@ const pillars = [
   {
     icon: BarChart2,
     title: "Always Free",
-    body: "Every tool on CryptoCalc Pro is free, with no account required. We are funded through advertising and affiliate partnerships with exchanges listed on the site.",
+    body: "Every tool on TradeFeeCalc is free, with no account required. We are funded through advertising and affiliate partnerships with exchanges listed on the site.",
   },
 ];
 
@@ -42,9 +42,9 @@ export default function AboutPage() {
 
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-3xl font-bold tracking-tight mb-4">About CryptoCalc Pro</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-4">About TradeFeeCalc</h1>
         <p className="text-muted-foreground leading-relaxed text-base">
-          CryptoCalc Pro is a free suite of professional trading calculators built for crypto
+          TradeFeeCalc is a free suite of professional trading calculators built for crypto
           futures traders, prop firm challengers, and long-term investors who need precise,
           instant calculations before they act.
         </p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
           interfaces, inaccurate, or too slow to use in the moment.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          CryptoCalc Pro started as a personal toolbox: a set of calculators that solve the
+          TradeFeeCalc started as a personal toolbox: a set of calculators that solve the
           real problems that come up when you&apos;re actively trading crypto futures. What is my
           correct position size for this stop loss? At what price do I get liquidated? How much
           has my prop firm drawdown budget been eaten by today&apos;s trades? What are my actual
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section className="mb-12 space-y-3">
         <h2 className="text-xl font-bold">Affiliate Disclosure</h2>
         <p className="text-muted-foreground leading-relaxed">
-          CryptoCalc Pro is free to use and always will be. To keep it running, some pages
+          TradeFeeCalc is free to use and always will be. To keep it running, some pages
           contain affiliate links to cryptocurrency exchanges. If you sign up through one of
           these links, we may receive a commission — at no cost to you.
         </p>
@@ -132,7 +132,7 @@ export default function AboutPage() {
       <section className="mb-12 rounded-xl border border-border bg-card/50 p-5 space-y-2">
         <h2 className="text-base font-semibold">Financial Disclaimer</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          All tools, calculators, articles, and comparisons on CryptoCalc Pro are provided for
+          All tools, calculators, articles, and comparisons on TradeFeeCalc are provided for
           educational and informational purposes only. Nothing on this site constitutes financial
           advice or a recommendation to buy, sell, or hold any asset. Crypto trading carries
           significant risk of loss. Always do your own research.

@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const title = searchParams.get("title") ?? "CryptoCalc Pro";
+  const title = searchParams.get("title") ?? "TradeFeeCalc";
   const desc = searchParams.get("desc") ?? "Professional Crypto Trading Calculators";
   const tag = searchParams.get("tag") ?? "Free Tool";
 
@@ -89,7 +89,7 @@ export async function GET(req: NextRequest) {
                 📊
               </div>
               <span style={{ color: "#f8f8f8", fontSize: "22px", fontWeight: "700", letterSpacing: "-0.3px" }}>
-                CryptoCalc Pro
+                TradeFeeCalc
               </span>
             </div>
             <div
@@ -136,7 +136,7 @@ export async function GET(req: NextRequest) {
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#6366f1" }} />
             <span style={{ color: "#52525b", fontSize: "16px", fontWeight: "500" }}>
-              cryptocalcpro.com
+              tradefeecalc.com
             </span>
           </div>
         </div>

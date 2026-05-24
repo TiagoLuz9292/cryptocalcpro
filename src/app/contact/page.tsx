@@ -4,11 +4,11 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with CryptoCalc Pro — feedback, suggestions, partnerships, or general questions.",
+  description: "Get in touch with TradeFeeCalc — feedback, suggestions, partnerships, or general questions.",
   robots: { index: true, follow: true },
 };
 
-const CONTACT_EMAIL = "contact@cryptocalcpro.com";
+const CONTACT_EMAIL = "contact@tradefeecalc.com";
 
 const topics = [
   {
@@ -40,7 +40,7 @@ export default function ContactPage() {
       <div className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight mb-3">Contact</h1>
         <p className="text-muted-foreground leading-relaxed">
-          CryptoCalc Pro is run by a small team. We read every message and respond to the
+          TradeFeeCalc is run by a small team. We read every message and respond to the
           ones we can. The best way to reach us is by email.
         </p>
       </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
       {/* Disclaimer */}
       <p className="text-xs text-muted-foreground leading-relaxed mb-8">
-        CryptoCalc Pro does not provide financial advice. For questions about specific trades,
+        TradeFeeCalc does not provide financial advice. For questions about specific trades,
         strategies, or investment decisions, please consult a qualified financial advisor.
         See our{" "}
         <Link href="/privacy-policy" className="text-primary hover:underline">
@@ -101,7 +101,7 @@ export default function ContactPage() {
       </p>
 
       <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-        ← Back to CryptoCalc Pro
+        ← Back to TradeFeeCalc
       </Link>
     </div>
   );
