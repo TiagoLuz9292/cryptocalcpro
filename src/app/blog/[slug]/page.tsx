@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import type { ComponentPropsWithoutRef } from "react";
 import { getAllPostSlugs, getPost } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -89,7 +90,22 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         <div className="prose-article">
-          <MDXRemote source={post.content} />
+          <MDXRemote
+            source={post.content}
+            components={{
+              a: ({ href, children, ...props }: ComponentPropsWithoutRef<"a">) => {
+                const external = href?.startsWith("http");
+                if (external) {
+                  return (
+                    <a href={href} target="_blank" rel="noopener noreferrer sponsored" {...props}>
+                      {children}
+                    </a>
+                  );
+                }
+                return <Link href={href ?? "/"}>{children}</Link>;
+              },
+            }}
+          />
         </div>
       </article>
 
