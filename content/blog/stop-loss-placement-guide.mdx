@@ -1,0 +1,121 @@
+---
+title: "How to Place Stop Losses That Actually Work"
+description: "Learn where professional traders place stop losses — and why placing them at arbitrary percentages guarantees you get stopped out before the trade works."
+date: "2026-05-22"
+category: "risk-management"
+keywords: ["stop loss placement", "where to put stop loss crypto", "stop loss strategy", "how to set stop loss", "stop loss trading guide"]
+featured: false
+---
+
+Most traders place stop losses at round numbers or arbitrary percentages. Professional traders place stop losses at levels where the trade is technically invalid — meaning the original thesis is wrong if price reaches that point.
+
+The difference determines whether your stop loss is a precision tool or a random ticket to losing money.
+
+## The Core Principle: Stop Losses Belong at Invalidation Points
+
+A stop loss is not a risk management tool. It is a statement: "If price reaches this level, my trade idea is wrong and I should exit."
+
+The placement should be driven entirely by market structure — not by how much you want to lose.
+
+The correct process:
+1. Identify the trade setup
+2. Identify where the setup is invalidated (price level)
+3. Place stop loss just beyond that level
+4. Calculate position size based on the distance to that stop
+
+Most traders do this in reverse: they decide how much to risk, place a stop at that distance, then hope the market doesn't reach it.
+
+> Once you know your stop placement, calculate your position size: [Crypto Position Size Calculator](/calculators/crypto-position-size-calculator)
+
+## Types of Stop Loss Placement
+
+### Structure-Based Stops (Most Reliable)
+
+Place stops beyond key support or resistance levels, swing highs/lows, or areas of prior consolidation.
+
+**Long trade example:**
+- You buy at $48,000 after a bounce from support
+- The support level is $47,200
+- Stop goes below $47,200 — say $46,900 (below the support with a buffer for wicks)
+- If price breaks $47,200 convincingly, your long idea is wrong
+
+The stop is not placed at $47,200 because that is where support is. It is placed below it because a close below that level invalidates the support thesis.
+
+### Volatility-Based Stops (ATR Method)
+
+Average True Range (ATR) measures the average size of recent candles. Using ATR as a stop distance ensures your stop is wider than normal price noise.
+
+```
+Stop Distance = Entry Price − (ATR × Multiplier)
+```
+
+Common multipliers: 1.5x for shorter timeframes, 2–3x for swing trades.
+
+**Example:** Bitcoin ATR on the daily = $2,000. Multiplier = 2. Stop distance = $4,000 from entry.
+
+This method adapts to current market volatility — when volatility is high, stops are wider; when it is low, stops are tighter.
+
+### Time-Based Stops
+
+A position that hasn't moved in your favor within a defined time window should be closed — even if the stop hasn't been hit.
+
+**Example:** You buy expecting a breakout within 3 days. After 3 days with no movement, exit at market. The setup has failed even though price hasn't reached your structural stop.
+
+Time-based stops reduce opportunity cost and free capital for better setups.
+
+## Common Stop Loss Mistakes
+
+### 1. Placing stops at round numbers
+
+Round numbers ($50,000, $48,000, $45,000) are where the majority of stop orders cluster. Market makers and liquidity hunters know this — they push price to these levels specifically to trigger retail stops before reversing.
+
+Place stops at non-obvious levels: $46,870 instead of $47,000. Just beyond a swing low rather than exactly at it.
+
+### 2. Using the same percentage for every trade
+
+A 2% stop on a volatile altcoin is meaningless — routine intraday moves exceed 2% regularly. The same 2% stop on a low-volatility asset may be wider than necessary.
+
+Stop distance should match the asset's volatility, not a fixed percentage.
+
+### 3. Moving stops against your position
+
+Widening a stop after it gets close is a discipline failure, not a risk management decision. If your stop placement was correct, honor it. If it wasn't, the lesson is to improve entry timing — not to keep widening stops indefinitely.
+
+### 4. Not using stops at all
+
+"I'll watch it manually" is not a strategy. Manual exits during fast markets are slow, emotional, and often much worse than a pre-placed stop order.
+
+### 5. Placing stops exactly at support/resistance
+
+Price often wicks slightly through support before reversing. A stop placed exactly at the support level is stopped out by the wick, then watches the trade work without them. Give stops a buffer: 0.3–0.5% beyond the structural level.
+
+## Stop Loss vs Liquidation Price
+
+On leveraged trades, your stop loss and your liquidation price are two different things — and your stop must always be hit before your liquidation.
+
+If your stop is triggered, you lose your planned risk amount. If you are liquidated instead of stopped, you lose your entire margin plus slippage in a fast market.
+
+**Rule:** Stop loss distance must be at least 1.5× the distance to your liquidation price.
+
+> Calculate your liquidation price before placing any leveraged trade: [Leverage Liquidation Calculator](/calculators/leverage-liquidation-calculator)
+
+## How Tight Is Too Tight?
+
+A stop that is too tight is worse than no stop. It guarantees you get stopped out by normal price noise before the trade has a chance to develop.
+
+Signs your stop is too tight:
+- You get stopped out frequently on trades that then reverse and go in your favor
+- Your stop is inside the average candle range for that timeframe
+- Your stop is less than 1 ATR from entry
+
+If you want a tighter stop, you need a more precise entry — not a smaller stop distance on a poor entry.
+
+## Summary
+
+- Stop losses belong at technical invalidation points, not arbitrary percentages
+- Structure-based stops (beyond swing highs/lows) are the most reliable
+- ATR-based stops adapt to current market volatility
+- Avoid round numbers — they attract stop hunts
+- Never widen a stop after it gets close
+- On leveraged trades, stops must trigger before the liquidation price
+- Too tight is worse than too wide — match stop distance to asset volatility

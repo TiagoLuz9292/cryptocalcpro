@@ -1,0 +1,236 @@
+You are a senior full-stack engineer, SEO architect, and scalable SaaS systems designer.
+
+Your mission is to build a production-ready “programmatic SEO + utility tools platform” focused on crypto trading, risk management, prop firm calculators, and finance utilities.
+
+This platform is designed to scale into hundreds or thousands of SEO pages and dozens of utility tools over time.
+
+IMPORTANT GOALS:
+- Extremely fast pages
+- SEO-first architecture
+- Modular reusable system
+- Easy to generate new tools/pages later
+- Cheap infrastructure
+- Minimal operational complexity
+- Production-ready code quality
+- Clean modern UI
+- Mobile-first
+- Easy monetization later with ads and affiliate links
+
+==================================================
+TECH STACK
+==================================================
+
+Use:
+
+- Next.js latest App Router
+- TypeScript
+- TailwindCSS
+- shadcn/ui
+- PostgreSQL-compatible structure
+- Prisma ORM
+- Supabase support
+- Cloudflare/Vercel deploy compatibility
+- Docker support
+- SEO best practices
+- Static generation wherever possible
+- Server components where appropriate
+
+DO NOT use:
+- Kubernetes
+- microservices
+- unnecessary abstractions
+- overly enterprise patterns
+- heavy dependencies
+
+==================================================
+CORE PLATFORM ARCHITECTURE
+==================================================
+
+Build the project as a scalable “website factory platform”.
+
+The architecture must support:
+
+1. Many utility calculators/tools
+2. Programmatic SEO pages
+3. Blog/article system
+4. Shared reusable components
+5. Dynamic internal linking
+6. Related tools engine
+7. Schema markup generation
+8. Sitemap generation
+9. Category-based SEO clustering
+10. Future monetization
+
+==================================================
+INITIAL TOOLS TO IMPLEMENT
+==================================================
+
+Create production-ready versions of these tools:
+
+1. Crypto Position Size Calculator
+2. Risk Reward Calculator
+3. Prop Firm Daily Drawdown Calculator
+4. Leverage Liquidation Calculator
+5. DCA Calculator
+6. Trading Fee Calculator
+7. Compounding Calculator
+
+Each tool must include:
+- clean responsive UI
+- validation
+- URL-shareable inputs
+- SEO-optimized page
+- FAQ section
+- educational explanation section
+- schema markup
+- internal links to related tools
+- high page speed optimization
+
+==================================================
+PROGRAMMATIC SEO SYSTEM
+==================================================
+
+Create a scalable SEO architecture.
+
+Generate:
+- dynamic metadata system
+- reusable SEO templates
+- OpenGraph support
+- JSON-LD schema
+- canonical URLs
+- sitemap generation
+- robots.txt
+- breadcrumb schema
+
+Support future generation of pages like:
+- /calculator/5x-leverage-btc
+- /calculator/10x-leverage-eth
+- /prop-firm/bybit-drawdown-rules
+- /risk-management/scalping-position-size
+
+Build reusable content templates.
+
+==================================================
+CONTENT ENGINE
+==================================================
+
+Create a content system that supports:
+
+- MDX blog posts
+- SEO landing pages
+- educational articles
+- auto-generated FAQ sections
+- internal linking engine
+
+Include:
+- article layout
+- table of contents
+- related posts
+- reading time
+- syntax highlighting
+
+==================================================
+DESIGN REQUIREMENTS
+==================================================
+
+Design style:
+- modern
+- minimal
+- fast
+- trustworthy financial-tool appearance
+
+Requirements:
+- dark mode
+- responsive
+- mobile optimized
+- accessible
+- lightweight
+- excellent typography
+
+Use:
+- grid layouts
+- cards
+- subtle animations
+- modern dashboard-style design
+
+==================================================
+PERFORMANCE REQUIREMENTS
+==================================================
+
+Optimize heavily for:
+- Lighthouse score
+- Core Web Vitals
+- SEO
+- page speed
+
+Requirements:
+- image optimization
+- lazy loading
+- static generation where possible
+- code splitting
+- minimal JS bundle
+
+==================================================
+MONETIZATION PREPARATION
+==================================================
+
+Prepare architecture for future:
+- Google AdSense placements
+- affiliate blocks
+- sponsored sections
+- premium tools
+- Stripe subscriptions
+
+But DO NOT implement paywalls yet.
+
+==================================================
+INFRASTRUCTURE
+==================================================
+
+Create:
+- Dockerfile
+- docker-compose
+- environment configuration
+- deployment instructions
+- Vercel deployment config
+- Cloudflare compatibility
+
+==================================================
+CODE QUALITY
+==================================================
+
+Requirements:
+- clean architecture
+- scalable folder structure
+- reusable components
+- strong typing
+- comments only where valuable
+- production-ready standards
+
+==================================================
+DELIVERABLES
+==================================================
+
+Generate:
+1. Full project structure
+2. All initial code
+3. SEO architecture
+4. Database schema
+5. Shared utility systems
+6. Reusable calculator engine
+7. Deployment instructions
+8. Scaling recommendations
+9. Future content-generation architecture
+10. Suggestions for adding hundreds of future pages efficiently
+
+IMPORTANT:
+Think like you are building a long-term scalable SEO business, not a demo project.
+
+Prioritize:
+- maintainability
+- scalability
+- SEO dominance
+- fast iteration
+- reusable generation systems
+
+The final result should feel like a real venture-backed finance tools platform.

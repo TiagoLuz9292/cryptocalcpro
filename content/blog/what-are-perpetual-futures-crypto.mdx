@@ -1,0 +1,118 @@
+---
+title: "What Are Perpetual Futures? How Crypto Perpetuals Work"
+description: "A complete guide to perpetual futures contracts — how they work, what funding rates are, how they differ from traditional futures, and how to trade them safely."
+date: "2026-05-08"
+category: "leverage"
+keywords: ["perpetual futures crypto", "what are perpetual futures", "crypto perpetuals explained", "funding rate explained", "perp futures trading"]
+featured: false
+---
+
+Perpetual futures are the most traded financial instrument in crypto. More volume flows through Bitcoin perpetual futures on Binance and Bybit than through Bitcoin spot markets. If you trade crypto actively, you are almost certainly interacting with perpetuals — understanding exactly how they work is not optional.
+
+## What Is a Perpetual Futures Contract?
+
+A perpetual futures contract is a derivative that tracks the price of an underlying asset (like Bitcoin) without an expiry date. Unlike traditional futures that settle on a fixed date, perpetuals can be held indefinitely.
+
+You do not own Bitcoin when you hold a Bitcoin perpetual. You hold a contract whose value moves with Bitcoin's price.
+
+**Key mechanic:** The perpetual price stays close to the Bitcoin spot price via a mechanism called the **funding rate**. Without this mechanism, the perpetual price would drift away from spot.
+
+## How Perpetuals Differ From Traditional Futures
+
+| Feature | Traditional Futures | Perpetual Futures |
+|---------|--------------------|--------------------|
+| Expiry date | Yes (monthly/quarterly) | No |
+| Settlement | Physical or cash on expiry | Never (continuous) |
+| Funding mechanism | None — price converges at expiry | Funding rates every 8h |
+| Basis | Can diverge from spot for weeks | Stays close to spot |
+| Rollover cost | Must roll contract before expiry | None |
+
+The no-expiry feature makes perpetuals far more practical for active trading. Traditional futures require you to close and reopen your position as each contract expires — adding cost and operational complexity.
+
+## Funding Rates: The Anchor Mechanism
+
+The funding rate is what keeps perpetual price anchored to spot price.
+
+**How it works:**
+- If the perpetual trades *above* spot: longs pay shorts (disincentivizes longs, brings price down)
+- If the perpetual trades *below* spot: shorts pay longs (disincentivizes shorts, brings price up)
+
+The payment happens every 8 hours. If you hold a long position and the funding rate is positive 0.01%, you pay 0.01% of your position value to short holders.
+
+**Example:**
+- Long position: $50,000 Bitcoin perpetual notional
+- Funding rate: 0.05% per 8-hour period
+- Cost per 8 hours: $50,000 × 0.05% = **$25**
+- Cost per day: $75
+- Cost per month: **$2,250**
+
+During peak bull markets, funding rates spike to 0.1–0.3% per period. At 0.1%/period, a $50,000 long position costs $150/day or $4,500/month just in funding — before any directional gain or loss.
+
+> Check funding costs on any position size: [Trading Fee Calculator](/calculators/trading-fee-calculator)
+
+## Mark Price vs Last Price
+
+Exchanges use **mark price** to calculate liquidations — not the last traded price. This is critical.
+
+The mark price is derived from an index of major spot exchanges. It is designed to be resistant to manipulation: a single whale cannot briefly spike the perpetual price to trigger liquidations, because the mark price does not react to momentary spot price wicks on the perpetual market itself.
+
+**Practical implication:** Your liquidation price is calculated against mark price. Even if the last traded price briefly wicks through your liquidation level but mark price does not reach it, you are not liquidated.
+
+## Long vs Short Perpetuals
+
+**Long:** You profit if the price goes up. You lose if the price goes down. Liquidation occurs when price falls enough to consume your margin.
+
+**Short:** You profit if the price goes down. You lose if the price goes up. Liquidation occurs when price rises enough to consume your margin.
+
+Both directions have liquidation risk. Many beginners short and are surprised to find they can be liquidated just like a long position — just in the opposite direction.
+
+> Calculate your liquidation price for both directions: [Leverage Liquidation Calculator](/calculators/leverage-liquidation-calculator)
+
+## Isolated vs Cross Margin
+
+**Isolated margin:** Each position gets a fixed amount of margin. If the trade hits liquidation, you lose only that allocated margin — the rest of your account is safe.
+
+**Cross margin:** Your entire account balance acts as margin for all open positions. Liquidation is harder to reach (the buffer is larger), but if it occurs, you can lose your entire account across all positions simultaneously.
+
+**For most traders:** Use isolated margin. The ability to control maximum loss per position is worth more than the slightly wider liquidation distance of cross margin.
+
+## How Leverage Works on Perpetuals
+
+Leverage multiplies your position size relative to your margin:
+
+```
+Position Size = Margin × Leverage
+Liquidation Distance ≈ 1 ÷ Leverage (minus maintenance margin)
+```
+
+| Leverage | Margin for $10,000 Position | Liquidation Distance |
+|----------|----------------------------|----------------------|
+| 1x | $10,000 | N/A (no liquidation) |
+| 5x | $2,000 | ~20% |
+| 10x | $1,000 | ~10% |
+| 25x | $400 | ~4% |
+| 100x | $100 | ~1% |
+
+Higher leverage does not increase your profit potential — it increases your *position size* for the same capital, which increases both profit potential and loss potential proportionally. The risk is identical to an unleveraged position of the same notional size.
+
+## Practical Rules for Trading Perpetuals
+
+**Always calculate your liquidation price before entering.** Know the exact price at which your margin is gone.
+
+**Set a stop loss between entry and liquidation.** Your stop loss should trigger before your liquidation price — never be liquidated when a stop loss was available.
+
+**Monitor funding rates before holding overnight.** High positive funding rates (>0.05%/period) are a warning that the market is crowded with longs and a short-term correction may follow.
+
+**Use isolated margin.** Control your maximum loss per position.
+
+**Start with 3–5x leverage maximum.** Even 5x leverage gives you a 20% liquidation distance — comparable to the full range of many crypto market corrections. Higher leverage is a specialist tool.
+
+## Summary
+
+- Perpetual futures track asset prices without expiry dates
+- Funding rates paid every 8h keep perpetual price anchored to spot
+- High positive funding = crowded long trades + high holding cost
+- Mark price (not last price) triggers liquidations — resistant to wicks
+- Use isolated margin to cap loss per position
+- Always set a stop loss before your liquidation price
+- 5x leverage gives ~20% liquidation distance — start here

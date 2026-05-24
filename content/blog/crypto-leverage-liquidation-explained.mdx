@@ -1,0 +1,152 @@
+---
+title: "Crypto Leverage and Liquidation Explained: What Every Trader Must Know"
+description: "Understand exactly how crypto leverage works, how liquidation prices are calculated, and how to use leverage safely without getting wiped out."
+date: "2026-05-15"
+category: "leverage"
+keywords: ["crypto leverage explained", "liquidation price calculator", "how liquidation works crypto", "leverage trading beginners", "avoid liquidation crypto"]
+featured: false
+---
+
+Leverage is the most powerful — and most dangerous — tool in crypto trading. Used correctly, it amplifies returns on capital. Used recklessly, it wipes accounts in minutes. This guide explains exactly how it works.
+
+## What Is Leverage in Crypto Trading?
+
+Leverage lets you control a position larger than your capital. When you use 10x leverage on a $1,000 margin deposit, you control a $10,000 position.
+
+```
+Position Value = Margin × Leverage
+```
+
+| Leverage | $1,000 Margin Controls |
+|----------|------------------------|
+| 2x | $2,000 |
+| 5x | $5,000 |
+| 10x | $10,000 |
+| 25x | $25,000 |
+| 100x | $100,000 |
+
+Gains and losses are calculated on the **full position value**, not your margin.
+
+## What Is Liquidation?
+
+Liquidation occurs when your **losses equal your margin**. The exchange automatically closes your position to prevent you from going into debt.
+
+> Before any leveraged trade, use our [Liquidation Price Calculator](/calculators/leverage-liquidation-calculator) to know your exact liquidation price.
+
+## How to Calculate Your Liquidation Price
+
+**For a long position (buying):**
+```
+Liquidation Price = Entry × (1 − 1/Leverage + Maintenance Margin%)
+```
+
+**For a short position (selling):**
+```
+Liquidation Price = Entry × (1 + 1/Leverage − Maintenance Margin%)
+```
+
+Most exchanges use a maintenance margin of **0.5%**.
+
+### Long Example: 10x Leverage on Bitcoin
+
+- Entry: $50,000
+- Leverage: 10x
+- Maintenance margin: 0.5%
+
+Liquidation = $50,000 × (1 − 1/10 + 0.005)
+Liquidation = $50,000 × (1 − 0.1 + 0.005)
+Liquidation = $50,000 × 0.905
+**Liquidation Price = $45,250**
+
+A 9.5% drop from your entry liquidates you entirely.
+
+### Short Example: 10x Leverage on Bitcoin
+
+- Entry: $50,000
+- Leverage: 10x
+- Maintenance margin: 0.5%
+
+Liquidation = $50,000 × (1 + 0.1 − 0.005)
+**Liquidation Price = $54,750**
+
+A 9.5% move up liquidates your short.
+
+## Leverage vs. Liquidation Distance
+
+Higher leverage means your liquidation price is much closer to your entry:
+
+| Leverage | Distance to Liquidation |
+|----------|------------------------|
+| 2x | ~50% |
+| 5x | ~20% |
+| 10x | ~10% |
+| 25x | ~4% |
+| 50x | ~2% |
+| 100x | ~1% |
+
+At 100x leverage, Bitcoin only needs to move **$500** from a $50,000 entry to liquidate you.
+
+## Isolated vs. Cross Margin
+
+**Isolated margin:** Your liquidation risk is capped at the margin you deposited for that specific position. The rest of your account is safe.
+
+**Cross margin:** Your entire account balance backs your position. Liquidation is less likely (more buffer), but when it happens, you lose everything in the account.
+
+> **Recommendation for beginners:** Always use isolated margin. It limits your maximum loss to what you intentionally risked.
+
+## How to Use Leverage Safely
+
+### Rule 1: Always set a stop loss above your liquidation price
+
+Your stop loss should hit **before** your liquidation price. If you get liquidated instead of stopped out, you paid more in slippage and fees than necessary.
+
+**Practical rule:** Your stop loss should be at least 1.5x your liquidation distance away from entry.
+
+### Rule 2: Size down when using higher leverage
+
+Higher leverage means a smaller price move wipes you out. Compensate by taking a smaller position.
+
+**Example:** You normally risk $100 per trade at 5x. If you move to 20x, reduce your margin by 75% to maintain the same dollar risk profile.
+
+### Rule 3: Never average down on a leveraged losing position
+
+Adding to a losing leveraged position moves your average entry closer to the liquidation price. This is the fastest path to a full account liquidation.
+
+### Rule 4: Avoid holding leveraged positions through major news
+
+Liquidity spikes during news events cause extreme slippage. Stop losses may not fill at expected prices, and the move can be fast enough to bypass your stop and hit liquidation.
+
+### Rule 5: Know your maintenance margin rate
+
+Different exchanges have different maintenance margin rates. Bybit, Binance, and OKX all differ slightly. Check your exchange's fee schedule and enter the correct rate into your liquidation calculator.
+
+## Why Do Exchanges Offer 100x Leverage?
+
+100x leverage is essentially a casino product. Exchanges earn fees on every trade — more trades, more fees. High leverage encourages more frequent trading and faster account turnover.
+
+No professional trader uses 100x leverage for directional trades. It is sometimes used for very specific hedging strategies with microsecond execution — not for retail spot or futures trading.
+
+## Funding Rates: The Hidden Cost of Leverage
+
+Perpetual futures (the most common leveraged crypto product) charge **funding rates** — periodic payments between long and short holders to keep the futures price anchored to spot.
+
+- When longs outnumber shorts: longs pay shorts
+- When shorts outnumber longs: shorts pay longs
+- Rates typically reset every 8 hours
+
+During strong bull markets, funding rates can reach **0.1–0.3% per 8 hours** — that is 3.65–10.95% **per month** just to hold a long position. This dramatically erodes leveraged long returns.
+
+Always check the funding rate before holding a leveraged position overnight.
+
+## Summary
+
+- Leverage amplifies both gains and losses
+- Liquidation occurs when losses equal your margin
+- Higher leverage = liquidation price closer to entry
+- Use isolated margin, always set stop losses before liquidation price
+- Never average down on leveraged positions
+- Account for funding rates on overnight positions
+- 100x leverage is a casino product, not a professional tool
+
+**Calculate your exact liquidation price before every leveraged trade:**
+**→ [Leverage Liquidation Calculator](/calculators/leverage-liquidation-calculator)**

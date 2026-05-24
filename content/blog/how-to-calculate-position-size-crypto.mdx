@@ -1,0 +1,122 @@
+---
+title: "How to Calculate Position Size in Crypto Trading (With Formula)"
+description: "Learn the exact formula professional crypto traders use to calculate position size based on account balance, risk percentage, and stop loss distance."
+date: "2026-05-01"
+category: "risk-management"
+keywords: ["position size calculator crypto", "how to calculate position size", "crypto position sizing", "risk management trading"]
+featured: true
+---
+
+Position sizing is the single most important skill in crypto trading. You can have the best strategy in the world, but if you size your positions wrong, you will blow your account.
+
+In this guide you will learn exactly how professional traders calculate position size — with the exact formula, worked examples, and common mistakes to avoid.
+
+## What Is Position Sizing?
+
+Position sizing determines **how many units** of a cryptocurrency to buy or sell on a single trade. The goal is to limit your risk to a fixed percentage of your account, no matter how wide your stop loss is.
+
+Without proper position sizing:
+- A single bad trade can wipe out weeks of gains
+- You take the same size on tight and wide stops, creating inconsistent risk
+- Emotions drive your sizing rather than math
+
+## The Position Size Formula
+
+```
+Risk Amount ($) = Account Size × Risk %
+Position Size (units) = Risk Amount ÷ |Entry Price − Stop Loss Price|
+Position Value ($) = Position Size × Entry Price
+```
+
+This formula ensures that **if your stop loss is hit, you lose exactly your chosen risk amount** — nothing more.
+
+## Step-by-Step Example
+
+Let's say:
+- Account size: **$10,000**
+- Risk per trade: **1%** (the industry standard)
+- Entry price: **$50,000** (Bitcoin)
+- Stop loss: **$49,000**
+
+**Step 1 — Calculate risk amount:**
+$10,000 × 1% = **$100**
+
+**Step 2 — Calculate stop distance:**
+|$50,000 − $49,000| = **$1,000**
+
+**Step 3 — Calculate position size:**
+$100 ÷ $1,000 = **0.1 BTC**
+
+**Step 4 — Calculate position value:**
+0.1 × $50,000 = **$5,000**
+
+So you buy 0.1 BTC worth $5,000. If price drops to your stop at $49,000, you lose exactly $100 — your planned 1% risk.
+
+> Use our [Crypto Position Size Calculator](/calculators/crypto-position-size-calculator) to do this math instantly for any trade.
+
+## How Much Should You Risk Per Trade?
+
+| Risk Level | Risk % | Notes |
+|------------|--------|-------|
+| Conservative | 0.5% | Beginners, drawdown-sensitive |
+| Standard | 1% | Most professional traders |
+| Aggressive | 2% | High conviction setups only |
+| Reckless | 5%+ | Account destruction guaranteed |
+
+The 1% rule is the professional standard for a reason. At 1% risk, you would need to lose **50 consecutive trades** to wipe out half your account. At 5%, just 14 losses accomplish the same.
+
+## Why Stop Loss Distance Changes Your Position Size
+
+This is the most misunderstood part of position sizing.
+
+**Tight stop (1%):** More units, larger position value
+**Wide stop (5%):** Fewer units, smaller position value
+
+Both trades risk the same dollar amount — but position size scales inversely with stop distance. This is mathematically correct. A wider stop means you are less confident in the exact entry, so you naturally take a smaller position.
+
+## Position Sizing for Leveraged Crypto Futures
+
+For leveraged futures, the formula is identical — but you need to account for leverage in your position value calculation.
+
+```
+Position Value = Position Size × Entry Price
+Margin Required = Position Value ÷ Leverage
+```
+
+**Example:** 0.1 BTC at $50,000 = $5,000 position value. At 10x leverage, you only need $500 margin.
+
+⚠️ **Warning:** Leverage does not change your dollar risk if you use a stop loss. It only reduces your margin requirement. The danger is if you do NOT use a stop loss — then leverage amplifies losses to your full margin.
+
+## Common Position Sizing Mistakes
+
+**1. Ignoring stop loss distance**
+Taking the same position size regardless of stop width is the most common beginner mistake. A 1% stop with a $10,000 position risks $100. A 5% stop with the same size risks $500.
+
+**2. Risking too much on "high conviction" trades**
+Every trader has losing streaks. Even 70%+ win rate strategies hit 10-trade losing runs. Never risk more than 2% no matter how good the setup looks.
+
+**3. Not adjusting for fees**
+In futures trading, fees eat into your effective P&L. Factor in round-trip fees when calculating your true risk.
+
+**4. Adding to losing positions**
+Averaging down on a losing trade increases your position size and your risk simultaneously. This is how accounts blow up.
+
+## The Psychology of Proper Position Sizing
+
+When you size correctly, you will notice:
+- You sleep better — no single trade can hurt you badly
+- You execute your plan more consistently — stops feel less painful
+- You recover from losses faster — drawdowns are shallow and temporary
+- You stop revenge trading — one loss doesn't feel catastrophic
+
+This is the real value of position sizing. It is not just math. It is the foundation of trading psychology.
+
+## Summary
+
+1. Never risk more than 1–2% per trade
+2. Always set your stop loss first, then calculate position size
+3. Position size = Risk Amount ÷ Stop Distance
+4. Tighter stop = larger position, wider stop = smaller position
+5. Use a calculator to remove emotion from the math
+
+**Ready to calculate?** Use our free [Position Size Calculator](/calculators/crypto-position-size-calculator) to size every trade in seconds.

@@ -1,0 +1,99 @@
+---
+title: "How to Calculate Your Liquidation Price on Binance Futures"
+description: "Step-by-step guide to calculating your exact liquidation price on Binance USDT-M perpetual futures — with the formula, examples, and how to protect yourself."
+date: "2026-05-24"
+category: "leverage"
+keywords: ["binance liquidation price calculator", "how to calculate liquidation price binance", "binance futures liquidation formula", "binance liquidation explained", "avoid liquidation binance"]
+featured: false
+---
+
+Getting liquidated on Binance is one of the most costly mistakes in crypto futures trading. It's also entirely preventable — if you know your liquidation price before you enter.
+
+This guide explains exactly how Binance calculates your liquidation price, with real examples you can follow.
+
+> Skip the math and calculate instantly: [Binance Liquidation Calculator](/calculators/binance-liquidation-calculator)
+
+## Why Binance Uses Mark Price, Not Last Price
+
+Before the formula, one critical fact: Binance does **not** liquidate you based on the last traded price. It uses **mark price** — a weighted average derived from multiple spot exchanges.
+
+This matters because Binance's own price can temporarily spike or dip on low liquidity. Without mark price protection, a 0.5% wick on Binance could liquidate millions of positions. Mark price prevents this.
+
+**Mark price = Index price + 8-hour funding rate basis**
+
+The index price is an average of BTC spot prices across Binance, Coinbase, Kraken, and other major exchanges. Your liquidation is only triggered when the broader market reaches your liquidation level — not just Binance.
+
+## The Liquidation Price Formula
+
+**For a long position (Buy):**
+
+> Liquidation Price ≈ Entry Price × (1 − 1/Leverage + Maintenance Margin Rate)
+
+**For a short position (Sell):**
+
+> Liquidation Price ≈ Entry Price × (1 + 1/Leverage − Maintenance Margin Rate)
+
+Binance's BTCUSDT perpetual maintenance margin rate is **0.40%** for standard retail position sizes.
+
+## Worked Examples
+
+**Example 1 — Long at 10× leverage**
+- Entry price: $50,000
+- Leverage: 10×
+- Maintenance margin: 0.40%
+
+> Liquidation = $50,000 × (1 − 0.10 + 0.004) = $50,000 × 0.904 = **$45,200**
+
+If BTC's mark price drops to $45,200, your position is liquidated. That is a **9.6% move against you**.
+
+**Example 2 — Long at 20× leverage**
+- Entry price: $50,000
+- Leverage: 20×
+- Maintenance margin: 0.40%
+
+> Liquidation = $50,000 × (1 − 0.05 + 0.004) = $50,000 × 0.954 = **$47,700**
+
+At 20× leverage, liquidation is only **4.6% away** from your entry. A normal daily BTC swing of 3–5% could hit this.
+
+**Example 3 — Short at 10× leverage**
+- Entry price: $50,000
+- Leverage: 10×
+
+> Liquidation = $50,000 × (1 + 0.10 − 0.004) = $50,000 × 1.096 = **$54,800**
+
+BTC needs to rise 9.6% to liquidate your short.
+
+## Isolated vs. Cross Margin — The Critical Choice
+
+The formula above applies to **isolated margin** positions. With cross margin, the calculation is more complex because your entire futures wallet backs the position.
+
+**Isolated margin (recommended for most traders):**
+- Only the margin you allocate to this trade is at risk
+- Liquidation price is fixed at the level calculated above
+- A bad trade cannot drain margin from other positions
+
+**Cross margin:**
+- Your entire futures wallet backs all positions
+- Liquidation price improves as account equity increases
+- But one large losing position can trigger margin calls on others
+
+**Use isolated margin** when you want to know exactly what you can lose before you open a position.
+
+## How to Protect Yourself
+
+**1. Set a stop-loss above your liquidation price**
+
+Your stop-loss and your liquidation price are not the same thing. Liquidation is what happens if you have no stop-loss and the market moves far enough. Your stop-loss should close the trade long before liquidation is reached.
+
+Example at 10× leverage: liquidation at −9.6%, stop-loss at −2%.
+
+**2. Keep leverage under 10× for directional trades**
+
+At 10× leverage on BTCUSDT, your liquidation distance is ~9.6%. Enough room for a stop-loss at 2–3%, with a 7% buffer. At 25×, liquidation is only ~3.6% away — easily hit by routine volatility.
+
+**3. Watch the maintenance margin tiers**
+
+Binance uses a tiered system. Large positions have higher maintenance margin rates, which brings the liquidation price closer. Always check Binance's risk parameters if trading with large size.
+
+> [Calculate your Binance liquidation price instantly →](/calculators/binance-liquidation-calculator)  
+> [Compare Binance vs Bybit liquidation parameters →](/compare/bybit-vs-binance-fees)
