@@ -7,6 +7,7 @@ import { getAllPostSlugs, getPost } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 import { siteConfig } from "@/data/site";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
@@ -108,6 +109,10 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
       </article>
+
+      {post.category === "prop-firm" && (
+        <AffiliateBlock category="prop-firm" className="mt-10" />
+      )}
 
       <div className="mt-12 pt-8 border-t border-border">
         <Link
