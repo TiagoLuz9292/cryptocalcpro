@@ -1,12 +1,11 @@
 import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 
 export function calcDrawdown(inputs: CalculatorInputs): CalculatorResult[] {
-  const accountSize = parseFloat(inputs.accountSize);
   const maxDailyDrawdownPercent = parseFloat(inputs.maxDailyDrawdownPercent);
   const startingBalance = parseFloat(inputs.startingBalance);
   const currentPnl = parseFloat(inputs.currentPnl) || 0;
 
-  if ([accountSize, maxDailyDrawdownPercent, startingBalance].some(isNaN)) return [];
+  if ([maxDailyDrawdownPercent, startingBalance].some(isNaN)) return [];
 
   const maxDailyLossUSD = (startingBalance * maxDailyDrawdownPercent) / 100;
   const currentLoss = Math.min(0, currentPnl);
