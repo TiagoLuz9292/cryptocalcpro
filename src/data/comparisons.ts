@@ -33,7 +33,7 @@ export const comparisons: ComparisonMeta[] = [
     entityA: "FTMO",
     entityB: "FundedNext",
     category: "prop-firm",
-    verdict: "FTMO is the industry benchmark with the strongest brand recognition and payout history. FundedNext is the best alternative — lower Phase 1 target, 15% evaluation profit share, and up to 90% split on funded accounts. Both are legitimate and widely used.",
+    verdict: "FTMO is the industry benchmark with the strongest brand recognition and payout history. FundedNext is a strong alternative with a lower Phase 1 target and a unique 15% evaluation profit share. If you trade crypto specifically, BrightFunded is worth comparing — 35 crypto pairs, payouts in hours, and up to 100% profit split.",
     rows: [
       { feature: "Daily drawdown limit", a: "5%", b: "5%", winner: "tie" },
       { feature: "Maximum drawdown", a: "10%", b: "10%", winner: "tie" },
@@ -158,7 +158,7 @@ export const comparisons: ComparisonMeta[] = [
     entityA: "FTMO",
     entityB: "E8 Funding",
     category: "prop-firm",
-    verdict: "FTMO has better brand recognition, a higher profit split ceiling (90% vs 80%), and a larger maximum drawdown buffer (10% vs 8%). E8 Funding has a lower Phase 1 profit target (8% vs 10%) and is often cheaper on challenge fees — making it a solid alternative for traders who want an easier entry bar. Both are legitimate and widely respected.",
+    verdict: "FTMO has stronger brand recognition and a larger max drawdown buffer (10% vs 8%). E8 Funding has a lower Phase 1 target and cheaper fees. For crypto traders, neither is the best choice — BrightFunded offers 35 crypto pairs, payouts in hours, and up to 100% profit split, making it the stronger option if crypto is your primary market.",
     rows: [
       { feature: "Phase 1 profit target", a: "10%", b: "8%", winner: "b" },
       { feature: "Phase 2 profit target", a: "5%", b: "5%", winner: "tie" },
