@@ -102,7 +102,7 @@ These subreddits allow free tool/resource posts.
 |------|--------|--------|
 | May 25 | r/Forex direct post | ⚠️ flagged — Rule 3 |
 | May 27 | r/FTMO direct post | pending |
-| May 29 | r/Bybit direct post | pending |
+| May 29 | r/Bybit direct post | ✅ sent |
 | Jun 1 | r/kucoin direct post | pending |
 | Jun 3 | r/BinanceExchange direct post | pending |
 | Jun 5 | r/PropFirms direct post | pending |
