@@ -12,4 +12,5 @@ export const affiliateLinks: Record<string, string> = {
   phemex:  "https://phemex.com/register?referralCode=GD22Q9",
   // ftmo: "https://trader.ftmo.com/?affiliates=YOURCODE",
   // fundednext: "https://fundednext.com/?ref=YOURCODE",
+  // brightfunded: "https://brightfunded.com/?ref=YOURCODE",
 };

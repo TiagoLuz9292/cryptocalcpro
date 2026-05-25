@@ -1185,6 +1185,47 @@ Focus on consistency. Risk 0.5–1% per trade and stop trading at 60% of your da
   },
 
   {
+    slug: "brightfunded-drawdown-calculator",
+    parentSlug: "prop-firm-daily-drawdown-calculator",
+    name: "BrightFunded Drawdown Calculator",
+    shortName: "BrightFunded Calc",
+    description: "Track your BrightFunded daily drawdown in real time. Pre-configured for BrightFunded's 5% daily loss limit across all account sizes.",
+    longDescription: "Stay compliant with BrightFunded rules and never breach your funded crypto account.",
+    category: "prop-firm",
+    keywords: ["BrightFunded calculator", "BrightFunded drawdown", "BrightFunded daily loss", "brightfunded drawdown calculator", "crypto prop firm calculator"],
+    fields: [
+      { id: "accountSize", label: "Account Size", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
+      { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "BrightFunded standard: 5% daily loss limit." },
+      { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
+      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
+    ],
+    relatedSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    faqs: [
+      { question: "What are BrightFunded's drawdown rules?", answer: "BrightFunded uses a 5% daily drawdown limit and a 10% maximum drawdown — both static from your initial balance. These apply during both evaluation phases and the funded phase." },
+      { question: "How is BrightFunded different from FTMO?", answer: "BrightFunded has a lower Phase 1 profit target (8% vs 10%), offers 35 crypto pairs vs FTMO's 2 CFDs, pays out in 4–8 hours vs FTMO's 14 days, and offers up to 100% profit split vs FTMO's 90%. FTMO has a longer track record since 2015." },
+      { question: "Can I trade crypto on BrightFunded?", answer: "Yes — BrightFunded offers 35 cryptocurrency pairs including Bitcoin, Ethereum, and major altcoins. Leverage is up to 5:1 on crypto. Adjust your position sizing for crypto volatility — risk 0.25–0.5% per trade rather than the 1% used on forex." },
+    ],
+    educationContent: {
+      title: "BrightFunded Risk Management",
+      body: `BrightFunded is purpose-built for crypto traders — 35 crypto pairs, fast payouts, and a scaling plan that can reach 100% profit split. Their drawdown structure is the same industry-standard 5%/10% model used by FTMO and FundedNext.
+
+**Key BrightFunded Rules**
+
+- 5% daily drawdown (equity-based, static)
+- 10% maximum drawdown (static from initial balance)
+- Phase 1 profit target: 8%
+- Phase 2 profit target: 5%
+- 35 cryptocurrency pairs available
+- Payouts in 4–8 hours — fastest in the industry
+- Up to 100% profit split via scaling plan
+
+**Crypto-Specific Risk Management**
+
+Crypto volatility is 3–5x higher than forex. Use 0.25–0.5% risk per trade on crypto pairs — not the 1% standard for forex. One BTC candle can move 5% in minutes. Your daily limit can be hit before you can manually close a position.`,
+    },
+  },
+
+  {
     slug: "topstep-drawdown-calculator",
     parentSlug: "prop-firm-daily-drawdown-calculator",
     name: "Topstep Drawdown Calculator",
