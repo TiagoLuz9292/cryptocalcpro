@@ -55,7 +55,7 @@ If BTC drops to $45,250, you get liquidated.
 
 **Why it matters for prop firms:**
 
-Most prop firms (FTMO, FundedNext, Topstep) enforce hard drawdown limits:
+Most prop firms (FTMO, FundedNext, BrightFunded) enforce hard drawdown limits:
 - **FTMO**: 10% max overall, 5% daily
 - **FundedNext**: 10% max overall, 5% daily
 
@@ -66,7 +66,7 @@ Breach either limit and you fail the challenge — no exceptions.
 - Use a daily loss limit equal to your best expected daily gain
 - Stop trading when you hit 50–70% of your drawdown limit`,
     relatedTerms: ["prop-firm-challenge", "daily-drawdown", "position-sizing", "risk-management"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "topstep-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "brightfunded-drawdown-calculator"],
     keywords: ["what is drawdown trading", "drawdown crypto", "prop firm drawdown rules", "how to calculate drawdown"],
   },
   {
@@ -368,7 +368,7 @@ This is why drawdown control matters more than return maximization — protectin
 |---|---|---|---|
 | FTMO | 10% | 5% | 10% |
 | FundedNext | 8% | 5% | 10% |
-| Topstep | $3,000 on $50K | 4% of starting balance | — |
+| BrightFunded | 8% | 5% | 10% |
 
 **Common failure reasons:**
 
@@ -381,7 +381,7 @@ This is why drawdown control matters more than return maximization — protectin
 
 Risk 0.5–1% per trade. With a 5% daily drawdown limit and 1% risk, you can lose 5 trades in a day before failing — enough buffer for bad days without reckless sizing.`,
     relatedTerms: ["drawdown", "daily-drawdown", "position-sizing", "risk-management"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "topstep-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "brightfunded-drawdown-calculator"],
     keywords: ["what is prop firm challenge", "how to pass prop firm challenge", "prop firm evaluation rules", "ftmo challenge explained"],
   },
   {
@@ -1150,13 +1150,13 @@ If you reach $115,000 and then lose back to $103,500 — you breach the trailing
 
 **Who uses trailing drawdown:**
 
-Topstep uses trailing drawdown for its Trading Combine. Many traders find it the most challenging type because a profitable run can actually make the challenge harder — your floor rises into dangerous territory if you overshoot.
+Some futures prop firms use trailing drawdown. Many traders find it the most challenging type because a profitable run can actually make the challenge harder — your floor rises into dangerous territory if you overshoot.
 
 **Strategy for trailing drawdown challenges:**
 
 Take profits consistently rather than letting winners run too far. Large unrealised gains that then partially reverse can lock in a very high trailing floor. Book profits regularly to control the floor.`,
     relatedTerms: ["drawdown", "static-drawdown", "daily-drawdown", "prop-firm-challenge"],
-    relatedCalcSlugs: ["topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedCalcSlugs: ["brightfunded-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     keywords: ["what is trailing drawdown", "trailing drawdown prop firm", "trailing drawdown explained", "topstep trailing drawdown"],
   },
 
@@ -1207,7 +1207,7 @@ Static drawdown can create a "nothing left to lose" mentality if you're near the
 | FTMO | 10% | 5% | 30 days / 60 days |
 | FundedNext | 8% | 5% | 30 days / 60 days |
 | E8 Funding | 8% | 5% | 30 days / 60 days |
-| Topstep | $3,000 on $50k | N/A | Unlimited |
+| BrightFunded | 8% | 5% | 30 days / 60 days |
 
 **Balancing profit target vs. drawdown:**
 
@@ -1242,7 +1242,7 @@ A 30-day limit with a 10% target means you need an average of ~0.33%/day. Many e
 | FTMO | 80–90% | 10–20% | 90% available via scaling plan |
 | FundedNext | 80–85% | 15–20% | |
 | E8 Funding | 80% | 20% | |
-| Topstep | 90% | 10% | |
+| BrightFunded | Up to 100% | 0–20% | Via scaling plan |
 
 **Why prop firms take a cut:**
 

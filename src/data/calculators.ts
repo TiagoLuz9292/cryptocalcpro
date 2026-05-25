@@ -236,7 +236,7 @@ Professional traders focus on R:R first, then win rate second. A 40% win rate wi
     name: "Prop Firm Daily Drawdown Calculator",
     shortName: "Daily Drawdown",
     description:
-      "Track your prop firm daily drawdown limit in real time. Avoid breaching account rules with this FTMO, FundedNext, and Topstep-compatible calculator.",
+      "Track your prop firm daily drawdown limit in real time. Avoid breaching account rules with this FTMO, FundedNext, and BrightFunded-compatible calculator.",
     longDescription:
       "Prop firm daily drawdown limits are the most common reason traders fail evaluations. This calculator keeps you safe.",
     category: "prop-firm",
@@ -1111,7 +1111,7 @@ No professional crypto trader uses 100x leverage for directional trades. The ris
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
       { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["fundednext-drawdown-calculator", "topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedSlugs: ["fundednext-drawdown-calculator", "brightfunded-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
       { question: "What is FTMO's daily drawdown limit?", answer: "FTMO allows a maximum daily loss of 5% of your account balance. On a $100,000 account, you cannot lose more than $5,000 in a single trading day. This applies to both the Challenge and Verification phases." },
       { question: "When does FTMO's daily drawdown reset?", answer: "FTMO resets the daily drawdown at midnight Central European Time (CET). If you're in New York (EST), that's 6 PM. In London (GMT), it's 11 PM. In Singapore (SGT), it's 7 AM." },
@@ -1160,7 +1160,7 @@ After passing and getting funded, FTMO offers a scaling plan. Hit 10% profit ove
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
       { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["ftmo-drawdown-calculator", "topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedSlugs: ["ftmo-drawdown-calculator", "brightfunded-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
       { question: "What are FundedNext's drawdown rules?", answer: "FundedNext Stellar 2-Step uses a 5% daily drawdown limit and a 10% maximum drawdown — both static from your initial balance. These apply during both evaluation phases and the funded phase." },
       { question: "How is FundedNext different from FTMO?", answer: "FundedNext has a lower Phase 1 profit target (8% vs 10%), pays 15% of evaluation profits when you pass, and offers up to 90% profit split on funded accounts. FTMO has stronger brand recognition and a longer track record since 2015." },
@@ -1222,42 +1222,6 @@ Focus on consistency. Risk 0.5–1% per trade and stop trading at 60% of your da
 **Crypto-Specific Risk Management**
 
 Crypto volatility is 3–5x higher than forex. Use 0.25–0.5% risk per trade on crypto pairs — not the 1% standard for forex. One BTC candle can move 5% in minutes. Your daily limit can be hit before you can manually close a position.`,
-    },
-  },
-
-  {
-    slug: "topstep-drawdown-calculator",
-    parentSlug: "prop-firm-daily-drawdown-calculator",
-    name: "Topstep Drawdown Calculator",
-    shortName: "Topstep Calculator",
-    description: "Track your Topstep daily drawdown limit. Pre-configured for Topstep's trailing drawdown structure used in the Trading Combine.",
-    longDescription: "Topstep uses a trailing drawdown — understand exactly how it works and stay funded.",
-    category: "prop-firm",
-    keywords: ["Topstep calculator", "Topstep drawdown calculator", "Topstep trailing drawdown", "Topstep trading combine", "futures prop firm calculator"],
-    fields: [
-      { id: "accountSize", label: "Account Size", type: "number", unit: "USD", placeholder: "50000", min: 1, step: 1, defaultValue: 50000 },
-      { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "4", min: 0.01, max: 100, step: 0.01, defaultValue: 4, helpText: "Topstep uses fixed daily loss limits — check your plan." },
-      { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "50000", min: 1, step: 0.01, defaultValue: 50000 },
-      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
-    ],
-    relatedSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
-    faqs: [
-      { question: "Does Topstep use trailing drawdown?", answer: "Topstep's Trading Combine uses a trailing maximum drawdown that follows your highest account balance. As your account grows, your drawdown floor trails up — locking in some of your profits as protected capital." },
-      { question: "What is Topstep's daily loss limit?", answer: "Topstep's daily loss limits vary by account size. The $50,000 account typically has a $1,000 daily loss limit. Always verify current rules on Topstep's official website as plans change." },
-    ],
-    educationContent: {
-      title: "Understanding Topstep's Trailing Drawdown",
-      body: `Topstep is primarily a futures prop firm (CME futures: ES, NQ, CL, etc.) but the risk principles apply to any prop trading. Their trailing drawdown structure is different from the static drawdown used by FTMO and others.
-
-**Trailing vs. Static Drawdown**
-
-**Static drawdown** (FTMO): Your floor is fixed at account_size × (1 - max_drawdown%). A $100k account with 10% max loss has a permanent floor at $90k.
-
-**Trailing drawdown** (Topstep): Your floor follows your highest equity. If you grow a $50k account to $55k, your floor rises too. This protects profits but also means your worst-case scenario changes as you earn.
-
-**Implications for Strategy**
-
-With a trailing drawdown, locking in profits can actually hurt you by raising your floor. Some traders use a "take a day off" rule after hitting a new equity high — letting the trailing level catch up before trading again.`,
     },
   },
 
@@ -1978,7 +1942,7 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "startingBalance", label: "Today's Starting Balance", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "currentPnL", label: "Current P&L", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "topstep-drawdown-calculator"],
+    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "brightfunded-drawdown-calculator"],
     faqs: [
       { question: "What are Apex Trader Funding's drawdown rules?", answer: "Apex Trader Funding uses a trailing drawdown model on most plans. The trailing drawdown rises with your profits until it locks at your starting balance. Daily loss limits vary by plan — check your specific Apex account dashboard for exact limits." },
       { question: "How does Apex Trader Funding differ from TopStep?", answer: "Both use trailing drawdown models. Apex is primarily focused on CME futures traders and offers a similar evaluation structure to TopStep. Apex has historically offered more aggressive promotional pricing and multiple active accounts simultaneously." },
@@ -2005,7 +1969,7 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "startingBalance", label: "Today's Starting Balance", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "currentPnL", label: "Current P&L", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "topstep-drawdown-calculator", "apex-trader-funding-drawdown-calculator"],
+    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "brightfunded-drawdown-calculator", "apex-trader-funding-drawdown-calculator"],
     faqs: [
       { question: "What are Tradeify's drawdown rules?", answer: "Tradeify's rules vary by plan. Most plans use a trailing drawdown similar to TopStep and Apex. Check your specific Tradeify plan documentation for exact daily loss limits and maximum drawdown parameters." },
       { question: "Is Tradeify the same as Leeloo Trading?", answer: "Tradeify is the rebranded name for Leeloo Trading. The platform and core evaluation structure are the same, with the same focus on CME futures trading." },
