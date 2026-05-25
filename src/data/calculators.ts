@@ -286,10 +286,10 @@ Professional traders focus on R:R first, then win rate second. A 40% win rate wi
         label: "Current P&L Today",
         type: "number",
         unit: "USD",
-        placeholder: "0",
+        placeholder: "-500",
         step: 0.01,
-        defaultValue: 0,
-        helpText: "Your running P&L for today (negative = loss).",
+        defaultValue: -500,
+        helpText: "Enter a negative number for a loss (e.g. -500). Enter 0 if session not started.",
       },
     ],
     relatedSlugs: [
@@ -1109,7 +1109,7 @@ No professional crypto trader uses 100x leverage for directional trades. The ris
       { id: "accountSize", label: "FTMO Account Size", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "maxDailyDrawdownPercent", label: "FTMO Daily Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "FTMO standard: 5% daily loss limit." },
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
-      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
+      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "-500", step: 0.01, defaultValue: -500, helpText: "Enter a negative number for a loss (e.g. -500). Enter 0 if session not started." },
     ],
     relatedSlugs: ["fundednext-drawdown-calculator", "brightfunded-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
@@ -1158,7 +1158,7 @@ After passing and getting funded, FTMO offers a scaling plan. Hit 10% profit ove
       { id: "accountSize", label: "Account Size", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "FundedNext Stellar 2-Step standard: 5% daily loss limit." },
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
-      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
+      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "-500", step: 0.01, defaultValue: -500, helpText: "Enter a negative number for a loss (e.g. -500). Enter 0 if session not started." },
     ],
     relatedSlugs: ["ftmo-drawdown-calculator", "brightfunded-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
@@ -1197,7 +1197,7 @@ Focus on consistency. Risk 0.5–1% per trade and stop trading at 60% of your da
       { id: "accountSize", label: "Account Size", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "BrightFunded standard: 5% daily loss limit." },
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
-      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
+      { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "-500", step: 0.01, defaultValue: -500, helpText: "Enter a negative number for a loss (e.g. -500). Enter 0 if session not started." },
     ],
     relatedSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
