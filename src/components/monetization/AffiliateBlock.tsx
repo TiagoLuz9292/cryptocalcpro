@@ -62,9 +62,19 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
             </div>
           </div>
         ) : (
-          <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-4">
-            Get funded — partner prop firms
-          </p>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-secondary shrink-0">
+              <Gift className="h-5 w-5 text-amber-400" />
+            </div>
+            <div>
+              <p className="font-bold text-base text-amber-400 leading-tight">
+                Get Funded — Start a Challenge
+              </p>
+              <p className="text-xs text-emerald-400 font-bold mt-0.5">
+                Partner prop firms below — earn while you trade
+              </p>
+            </div>
+          </div>
         )}
         <div className="flex flex-wrap gap-3">
           {keys.map((key) => {

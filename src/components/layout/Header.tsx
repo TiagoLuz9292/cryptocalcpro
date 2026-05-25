@@ -7,11 +7,11 @@ import { siteConfig } from "@/data/site";
 import { Calculator, BarChart2, BookOpen, Menu, X, GitCompareArrows, BookMarked, ChevronDown } from "lucide-react";
 
 const TOP_CALCULATORS = [
-  { href: "/calculators/crypto-position-size-calculator", label: "Position Size" },
-  { href: "/calculators/leverage-liquidation-calculator", label: "Liquidation Price" },
-  { href: "/calculators/trading-fee-calculator",          label: "Trading Fees" },
-  { href: "/calculators/risk-reward-calculator",          label: "Risk / Reward" },
-  { href: "/calculators/ftmo-drawdown-calculator",        label: "FTMO Drawdown" },
+  { href: "/calculators/crypto-position-size-calculator",    label: "Position Size" },
+  { href: "/calculators/prop-firm-daily-drawdown-calculator", label: "Prop Firm Drawdown" },
+  { href: "/calculators/leverage-liquidation-calculator",    label: "Liquidation Price" },
+  { href: "/calculators/trading-fee-calculator",             label: "Trading Fees" },
+  { href: "/calculators/risk-reward-calculator",             label: "Risk / Reward" },
 ];
 
 const secondaryNavLinks = [
