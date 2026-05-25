@@ -236,7 +236,7 @@ Professional traders focus on R:R first, then win rate second. A 40% win rate wi
     name: "Prop Firm Daily Drawdown Calculator",
     shortName: "Daily Drawdown",
     description:
-      "Track your prop firm daily drawdown limit in real time. Avoid breaching account rules with this FTMO, MyFundedFX, and Topstep-compatible calculator.",
+      "Track your prop firm daily drawdown limit in real time. Avoid breaching account rules with this FTMO, FundedNext, and Topstep-compatible calculator.",
     longDescription:
       "Prop firm daily drawdown limits are the most common reason traders fail evaluations. This calculator keeps you safe.",
     category: "prop-firm",
@@ -330,7 +330,7 @@ Professional traders focus on R:R first, then win rate second. A 40% win rate wi
 
 **Common Prop Firm Rules**
 - FTMO: 5% daily, 10% total
-- MyFundedFX: 5% daily, 10% total
+- FundedNext: 5% daily, 10% total
 - Apex Trader Funding: Trailing drawdown
 
 **Strategy to Stay Safe**
@@ -1111,7 +1111,7 @@ No professional crypto trader uses 100x leverage for directional trades. The ris
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
       { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["myfundedfx-drawdown-calculator", "topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedSlugs: ["fundednext-drawdown-calculator", "topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
       { question: "What is FTMO's daily drawdown limit?", answer: "FTMO allows a maximum daily loss of 5% of your account balance. On a $100,000 account, you cannot lose more than $5,000 in a single trading day. This applies to both the Challenge and Verification phases." },
       { question: "When does FTMO's daily drawdown reset?", answer: "FTMO resets the daily drawdown at midnight Central European Time (CET). If you're in New York (EST), that's 6 PM. In London (GMT), it's 11 PM. In Singapore (SGT), it's 7 AM." },
@@ -1146,39 +1146,41 @@ After passing and getting funded, FTMO offers a scaling plan. Hit 10% profit ove
   },
 
   {
-    slug: "myfundedfx-drawdown-calculator",
+    slug: "fundednext-drawdown-calculator",
     parentSlug: "prop-firm-daily-drawdown-calculator",
-    name: "MyFundedFX Drawdown Calculator",
-    shortName: "MyFundedFX Calc",
-    description: "Track your MyFundedFX daily drawdown in real time. Pre-configured for MyFundedFX's daily loss limits across all account sizes.",
-    longDescription: "Stay compliant with MyFundedFX rules and never breach your funded account.",
+    name: "FundedNext Drawdown Calculator",
+    shortName: "FundedNext Calc",
+    description: "Track your FundedNext daily drawdown in real time. Pre-configured for FundedNext's Stellar 2-Step daily loss limits across all account sizes.",
+    longDescription: "Stay compliant with FundedNext rules and never breach your funded account.",
     category: "prop-firm",
-    keywords: ["MyFundedFX calculator", "MyFundedFX drawdown", "MyFundedFX daily loss", "funded fx calculator", "MFFX drawdown calculator"],
+    keywords: ["FundedNext calculator", "FundedNext drawdown", "FundedNext daily loss", "fundednext drawdown calculator", "funded next calculator"],
     fields: [
       { id: "accountSize", label: "Account Size", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
-      { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "MyFundedFX standard: 5% daily loss limit." },
+      { id: "maxDailyDrawdownPercent", label: "Daily Loss Limit", type: "number", unit: "%", placeholder: "5", min: 0.01, max: 100, step: 0.01, defaultValue: 5, helpText: "FundedNext Stellar 2-Step standard: 5% daily loss limit." },
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 0.01, defaultValue: 100000 },
       { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
     relatedSlugs: ["ftmo-drawdown-calculator", "topstep-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
-      { question: "What are MyFundedFX's drawdown rules?", answer: "MyFundedFX uses a 5% daily drawdown limit and a 10% maximum drawdown limit — the same structure as FTMO. Both are equity-based and apply during the challenge and funded phases." },
-      { question: "How is MyFundedFX different from FTMO?", answer: "Key differences include pricing, reset time, and available trading instruments. MyFundedFX allows crypto and forex trading. Always check the current rules on their official website as they update periodically." },
+      { question: "What are FundedNext's drawdown rules?", answer: "FundedNext Stellar 2-Step uses a 5% daily drawdown limit and a 10% maximum drawdown — both static from your initial balance. These apply during both evaluation phases and the funded phase." },
+      { question: "How is FundedNext different from FTMO?", answer: "FundedNext has a lower Phase 1 profit target (8% vs 10%), pays 15% of evaluation profits when you pass, and offers up to 90% profit split on funded accounts. FTMO has stronger brand recognition and a longer track record since 2015." },
     ],
     educationContent: {
-      title: "MyFundedFX Risk Management",
-      body: `MyFundedFX offers funded accounts for forex and crypto traders. Their drawdown rules follow the industry standard 5%/10% structure used by most prop firms.
+      title: "FundedNext Risk Management",
+      body: `FundedNext is one of the fastest-growing prop firms, having paid out over $284M to traders since 2022. Their Stellar 2-Step challenge follows the industry-standard 5%/10% drawdown structure.
 
-**Key MyFundedFX Rules**
+**Key FundedNext Rules (Stellar 2-Step)**
 
-- 5% daily drawdown (equity-based)
-- 10% maximum drawdown
-- No trading restrictions during news (check current rules)
-- Available for forex, commodities, and crypto indices
+- 5% daily drawdown (equity-based, static)
+- 10% maximum drawdown (static from initial balance)
+- Phase 1 profit target: 8%
+- Phase 2 profit target: 5%
+- 15% of evaluation profits paid when you pass — unique to FundedNext
+- Up to 90% profit split on funded accounts
 
 **Strategy for Passing**
 
-Focus on consistency. MyFundedFX, like all prop firms, rewards steady returns over big swings. A 1–2% daily target with 0.5% per-trade risk gives you a long runway before hitting any limits.`,
+Focus on consistency. Risk 0.5–1% per trade and stop trading at 60% of your daily limit. FundedNext rewards steady performance — the 8% Phase 1 target is more achievable than FTMO's 10% if you trade systematically.`,
     },
   },
 
@@ -1197,7 +1199,7 @@ Focus on consistency. MyFundedFX, like all prop firms, rewards steady returns ov
       { id: "startingBalance", label: "Balance at Day Start", type: "number", unit: "USD", placeholder: "50000", min: 1, step: 0.01, defaultValue: 50000 },
       { id: "currentPnl", label: "Current P&L Today", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     faqs: [
       { question: "Does Topstep use trailing drawdown?", answer: "Topstep's Trading Combine uses a trailing maximum drawdown that follows your highest account balance. As your account grows, your drawdown floor trails up — locking in some of your profits as protected capital." },
       { question: "What is Topstep's daily loss limit?", answer: "Topstep's daily loss limits vary by account size. The $50,000 account typically has a $1,000 daily loss limit. Always verify current rules on Topstep's official website as plans change." },
@@ -1547,7 +1549,7 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "startingBalance", label: "Today's Starting Balance", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "currentPnL", label: "Current P&L", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator"],
+    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "fundednext-drawdown-calculator"],
     faqs: [
       { question: "What are The Funded Trader's drawdown rules?", answer: "The Funded Trader standard plans use a 5% daily drawdown and 10% maximum drawdown, calculated from your starting balance. Rules can vary by plan type — always verify in your account dashboard." },
       { question: "How does The Funded Trader calculate daily drawdown?", answer: "Like most modern prop firms, TFT calculates daily drawdown based on equity (including floating losses on open positions), not just closed P&L. Reset time varies by plan — check your specific plan terms." },
@@ -1574,7 +1576,7 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "startingBalance", label: "Today's Starting Balance", type: "number", unit: "USD", placeholder: "100000", min: 1, step: 1, defaultValue: 100000 },
       { id: "currentPnL", label: "Current P&L", type: "number", unit: "USD", placeholder: "0", step: 0.01, defaultValue: 0 },
     ],
-    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator"],
+    relatedSlugs: ["prop-firm-daily-drawdown-calculator", "ftmo-drawdown-calculator", "fundednext-drawdown-calculator"],
     faqs: [
       { question: "What are E8 Funding's drawdown rules?", answer: "E8 Funding uses a 5% daily drawdown limit and an 8% maximum drawdown on their standard plans. The daily drawdown is equity-based and resets at midnight server time." },
       { question: "What is E8 Funding's profit target?", answer: "E8 Funding Phase 1 requires an 8% profit target. Phase 2 requires a 5% target. Both phases share the same drawdown limits. Minimum trading days are required in each phase." },

@@ -26,14 +26,14 @@ export interface ComparisonMeta {
 
 export const comparisons: ComparisonMeta[] = [
   {
-    slug: "ftmo-vs-myfundedfx",
-    title: "FTMO vs MyFundedFX",
-    description: "Head-to-head comparison of FTMO and MyFundedFX — drawdown rules, profit targets, payout splits, and which prop firm is easier to pass.",
-    keywords: ["ftmo vs myfundedfx", "ftmo or myfundedfx", "best prop firm 2026", "ftmo myfundedfx comparison", "prop firm comparison"],
+    slug: "ftmo-vs-fundednext",
+    title: "FTMO vs FundedNext",
+    description: "Head-to-head comparison of FTMO and FundedNext — drawdown rules, profit targets, payout splits, and which prop firm is easier to pass.",
+    keywords: ["ftmo vs fundednext", "ftmo or fundednext", "best prop firm 2026", "ftmo fundednext comparison", "prop firm comparison"],
     entityA: "FTMO",
-    entityB: "MyFundedFX",
+    entityB: "FundedNext",
     category: "prop-firm",
-    verdict: "FTMO is the industry benchmark with better brand recognition and payout reliability. MyFundedFX offers a slightly lower entry cost and comparable rules — good for traders who want a credible alternative. Both are legitimate and widely used.",
+    verdict: "FTMO is the industry benchmark with the strongest brand recognition and payout history. FundedNext is the best alternative — lower Phase 1 target, 15% evaluation profit share, and up to 90% split on funded accounts. Both are legitimate and widely used.",
     rows: [
       { feature: "Daily drawdown limit", a: "5%", b: "5%", winner: "tie" },
       { feature: "Maximum drawdown", a: "10%", b: "10%", winner: "tie" },
@@ -42,13 +42,13 @@ export const comparisons: ComparisonMeta[] = [
       { feature: "Phase 2 profit target", a: "5%", b: "5%", winner: "tie" },
       { feature: "Minimum trading days", a: "4 days", b: "5 days", winner: "a" },
       { feature: "Time limit (Phase 1)", a: "30 days", b: "30 days", winner: "tie" },
-      { feature: "Profit split", a: "Up to 90%", b: "Up to 85%", winner: "a" },
-      { feature: "Funding rate (for retry)", a: "Full fee", b: "Full fee", winner: "tie" },
+      { feature: "Profit split", a: "Up to 90%", b: "Up to 90%", winner: "tie" },
+      { feature: "Evaluation profit share", a: "None", b: "15% of eval profits", winner: "b" },
       { feature: "News trading", a: "Allowed", b: "Allowed", winner: "tie" },
       { feature: "EA / automated trading", a: "Allowed (own logic)", b: "Allowed (own logic)", winner: "tie" },
-      { feature: "Account sizes", a: "$10k–$200k", b: "$5k–$200k", winner: "b" },
+      { feature: "Account sizes", a: "$10k–$200k", b: "$6k–$200k", winner: "b" },
     ],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
   },
   {
     slug: "ftmo-vs-topstep",

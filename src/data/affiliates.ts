@@ -11,4 +11,5 @@ export const affiliateLinks: Record<string, string> = {
   bingx:   "https://bingxdao.com/invite/Z1QDVI/",
   phemex:  "https://phemex.com/register?referralCode=GD22Q9",
   // ftmo: "https://trader.ftmo.com/?affiliates=YOURCODE",
+  // fundednext: "https://fundednext.com/?ref=YOURCODE",
 };

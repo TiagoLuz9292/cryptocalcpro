@@ -26,7 +26,7 @@ export const categories: Category[] = [
     name: "Prop Firm",
     description: "Navigate prop firm rules, drawdown limits, and evaluation targets.",
     icon: "Building2",
-    intro: "Prop firm evaluations (FTMO, MyFundedFX, Topstep) have strict drawdown rules that end your challenge the moment you breach them — no exceptions, no recovery. The daily drawdown limit is the most dangerous: on most firms it's 5% of your starting or peak balance, meaning a single bad day can fail a challenge you've been building for weeks. These calculators tell you exactly how much margin you have left at any point in your evaluation so you can size positions accordingly and never approach the limit by accident.",
+    intro: "Prop firm evaluations (FTMO, FundedNext, Topstep) have strict drawdown rules that end your challenge the moment you breach them — no exceptions, no recovery. The daily drawdown limit is the most dangerous: on most firms it's 5% of your starting or peak balance, meaning a single bad day can fail a challenge you've been building for weeks. These calculators tell you exactly how much margin you have left at any point in your evaluation so you can size positions accordingly and never approach the limit by accident.",
   },
   {
     slug: "leverage",

@@ -55,9 +55,9 @@ If BTC drops to $45,250, you get liquidated.
 
 **Why it matters for prop firms:**
 
-Most prop firms (FTMO, MyFundedFX, Topstep) enforce hard drawdown limits:
+Most prop firms (FTMO, FundedNext, Topstep) enforce hard drawdown limits:
 - **FTMO**: 10% max overall, 5% daily
-- **MyFundedFX**: 10% max overall, 5% daily
+- **FundedNext**: 10% max overall, 5% daily
 
 Breach either limit and you fail the challenge — no exceptions.
 
@@ -66,7 +66,7 @@ Breach either limit and you fail the challenge — no exceptions.
 - Use a daily loss limit equal to your best expected daily gain
 - Stop trading when you hit 50–70% of your drawdown limit`,
     relatedTerms: ["prop-firm-challenge", "daily-drawdown", "position-sizing", "risk-management"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "topstep-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "topstep-drawdown-calculator"],
     keywords: ["what is drawdown trading", "drawdown crypto", "prop firm drawdown rules", "how to calculate drawdown"],
   },
   {
@@ -367,7 +367,7 @@ This is why drawdown control matters more than return maximization — protectin
 | Firm | Phase 1 Target | Daily Drawdown | Overall DD |
 |---|---|---|---|
 | FTMO | 10% | 5% | 10% |
-| MyFundedFX | 8% | 5% | 10% |
+| FundedNext | 8% | 5% | 10% |
 | Topstep | $3,000 on $50K | 4% of starting balance | — |
 
 **Common failure reasons:**
@@ -381,7 +381,7 @@ This is why drawdown control matters more than return maximization — protectin
 
 Risk 0.5–1% per trade. With a 5% daily drawdown limit and 1% risk, you can lose 5 trades in a day before failing — enough buffer for bad days without reckless sizing.`,
     relatedTerms: ["drawdown", "daily-drawdown", "position-sizing", "risk-management"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "topstep-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "topstep-drawdown-calculator"],
     keywords: ["what is prop firm challenge", "how to pass prop firm challenge", "prop firm evaluation rules", "ftmo challenge explained"],
   },
   {
@@ -1094,7 +1094,7 @@ No stablecoin is completely risk-free. USDT depegging events, USDC temporary dep
 | Firm | Daily Drawdown | Calculation |
 |---|---|---|
 | FTMO | 5% of account | From daily starting balance |
-| MyFundedFX | 5% of account | From daily starting balance |
+| FundedNext | 5% of account | From daily starting balance |
 | E8 Funding | 5% of account | From daily starting balance |
 
 **How it is calculated:**
@@ -1118,7 +1118,7 @@ Without a daily limit, a single catastrophic trading session could wipe out week
 
 → [Calculate your daily drawdown floor](/calculators/prop-firm-daily-drawdown-calculator)`,
     relatedTerms: ["drawdown", "prop-firm-challenge", "trailing-drawdown", "static-drawdown", "position-sizing"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     keywords: ["what is daily drawdown prop firm", "daily drawdown limit explained", "prop firm daily loss limit", "how daily drawdown works"],
   },
 
@@ -1184,13 +1184,13 @@ Static drawdown becomes progressively more generous relative to your current equ
 
 **Which firms use static drawdown:**
 
-FTMO, MyFundedFX, and E8 Funding all use static drawdown as their primary maximum drawdown type. This is generally considered more trader-friendly than trailing drawdown.
+FTMO, FundedNext, and E8 Funding all use static drawdown as their primary maximum drawdown type. This is generally considered more trader-friendly than trailing drawdown.
 
 **The flip side:**
 
 Static drawdown can create a "nothing left to lose" mentality if you're near the floor. A trader down 8% on a 10% static drawdown limit may take excessive risks trying to recover before the end of the challenge.`,
     relatedTerms: ["trailing-drawdown", "daily-drawdown", "drawdown", "prop-firm-challenge"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator"],
     keywords: ["what is static drawdown prop firm", "static vs trailing drawdown", "fixed drawdown prop firm", "ftmo static drawdown"],
   },
 
@@ -1205,7 +1205,7 @@ Static drawdown can create a "nothing left to lose" mentality if you're near the
 | Firm | Phase 1 Target | Phase 2 Target | Time Limit |
 |---|---|---|---|
 | FTMO | 10% | 5% | 30 days / 60 days |
-| MyFundedFX | 8% | 5% | 30 days / 60 days |
+| FundedNext | 8% | 5% | 30 days / 60 days |
 | E8 Funding | 8% | 5% | 30 days / 60 days |
 | Topstep | $3,000 on $50k | N/A | Unlimited |
 
@@ -1225,7 +1225,7 @@ With a 1% risk per trade and a 1:3 R:R, you need roughly 4–5 winning trades to
 
 A 30-day limit with a 10% target means you need an average of ~0.33%/day. Many experienced traders find this achievable with one solid trade every few days — consistency matters more than frequency.`,
     relatedTerms: ["prop-firm-challenge", "drawdown", "daily-drawdown", "position-sizing", "risk-reward-ratio"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator", "prop-firm-daily-drawdown-calculator"],
     keywords: ["prop firm profit target", "what is profit target trading", "ftmo 10% profit target", "how to hit profit target prop firm"],
   },
 
@@ -1240,7 +1240,7 @@ A 30-day limit with a 10% target means you need an average of ~0.33%/day. Many e
 | Firm | Trader Share | Firm Share | Notes |
 |---|---|---|---|
 | FTMO | 80–90% | 10–20% | 90% available via scaling plan |
-| MyFundedFX | 80–85% | 15–20% | |
+| FundedNext | 80–85% | 15–20% | |
 | E8 Funding | 80% | 20% | |
 | Topstep | 90% | 10% | |
 
@@ -1264,7 +1264,7 @@ On your own $100,000 account generating 5%/month:
 
 The prop firm arrangement is most valuable when you cannot fund a large account yourself — you get $100k in capital for the price of a challenge fee ($200–$600).`,
     relatedTerms: ["prop-firm-challenge", "drawdown", "profit-target"],
-    relatedCalcSlugs: ["ftmo-drawdown-calculator", "myfundedfx-drawdown-calculator"],
+    relatedCalcSlugs: ["ftmo-drawdown-calculator", "fundednext-drawdown-calculator"],
     keywords: ["prop firm profit split", "what is profit split trading", "ftmo profit split", "funded trader profit percentage"],
   },
 
