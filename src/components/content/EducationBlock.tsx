@@ -66,7 +66,32 @@ function linkGlossaryTerms(text: string): string {
   return result;
 }
 
+function renderTableBlock(block: string): string {
+  const lines = block.trim().split("\n").filter(Boolean);
+  const sepIdx = lines.findIndex((l) => /^\|[\s\-|:]+\|$/.test(l));
+  const headerLines = sepIdx > 0 ? lines.slice(0, sepIdx) : [];
+  const bodyLines = sepIdx > 0 ? lines.slice(sepIdx + 1) : lines;
+
+  const toRow = (line: string, header: boolean): string => {
+    const cells = line.split("|").filter(Boolean).map((c) => c.trim());
+    if (header) {
+      return `<tr>${cells.map((c) => `<th class="py-2.5 px-3 text-sm font-semibold text-left text-foreground whitespace-nowrap">${c}</th>`).join("")}</tr>`;
+    }
+    return `<tr class="border-t border-border/50">${cells.map((c) => `<td class="py-2 px-3 text-sm text-muted-foreground">${c}</td>`).join("")}</tr>`;
+  };
+
+  const thead = headerLines.length
+    ? `<thead class="bg-secondary/40 border-b-2 border-border">${headerLines.map((l) => toRow(l, true)).join("")}</thead>`
+    : "";
+  const tbody = `<tbody>${bodyLines.map((l) => toRow(l, false)).join("")}</tbody>`;
+
+  return `<div class="overflow-x-auto my-4 rounded-lg border border-border"><table class="w-full border-collapse">${thead}${tbody}</table></div>`;
+}
+
 function parseMarkdown(text: string): string {
+  // Collect consecutive | lines into table blocks first, before paragraph splitting
+  text = text.replace(/((?:(?:^|\n)\|[^\n]+)+)/g, (block) => renderTableBlock(block));
+
   return text
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary/90 underline decoration-dotted underline-offset-2 hover:text-primary transition-colors">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -74,11 +99,6 @@ function parseMarkdown(text: string): string {
     .replace(/`(.*?)`/g, '<code class="bg-secondary/60 px-1 rounded text-xs font-mono">$1</code>')
     .replace(/^### (.*)/gm, '<h3 class="text-base font-semibold mt-4 mb-2">$1</h3>')
     .replace(/^## (.*)/gm, '<h3 class="text-lg font-semibold mt-6 mb-3">$1</h3>')
-    .replace(/^\| (.*) \|$/gm, (match) => {
-      if (match.includes("---")) return "";
-      const cells = match.split("|").filter(Boolean).map((c) => c.trim());
-      return `<tr class="border-b border-border/50">${cells.map((c) => `<td class="py-2 pr-4 text-sm">${c}</td>`).join("")}</tr>`;
-    })
     .replace(/^- (.*)/gm, '<li class="text-sm text-muted-foreground leading-relaxed ml-4 list-disc">$1</li>')
     .replace(/\n\n/g, '</p><p class="mb-3 text-sm text-muted-foreground leading-relaxed">')
     .replace(/\n/g, " ");
