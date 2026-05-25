@@ -68,7 +68,9 @@ export default async function CalculatorPage({ params }: PageProps) {
         <CalculatorShell meta={calc} />
       </Suspense>
 
-      <AffiliateBlock category={affiliateCategory} exchange={detectedExchange} className="mt-8" />
+      <div className="isolate">
+        <AffiliateBlock category={affiliateCategory} exchange={detectedExchange} className="mt-8" />
+      </div>
 
       <EducationBlock
         title={calc.educationContent.title}
