@@ -18,12 +18,12 @@ const EXCHANGE_META: Record<string, { name: string; cta: string }> = {
   bingx:   { name: "BingX",   cta: "Open account" },
   phemex:  { name: "Phemex",  cta: "Open account" },
   bitget:  { name: "Bitget",  cta: "Open account" },
-  ftmo:    { name: "FTMO",    cta: "Start challenge" },
-  myfundedfx:  { name: "MyFundedFX",  cta: "Start challenge" },
-  fundednext:  { name: "FundedNext",  cta: "Start challenge" },
+  ftmo:         { name: "FTMO",         cta: "Start challenge" },
+  fundednext:   { name: "FundedNext",   cta: "Start challenge" },
+  brightfunded: { name: "BrightFunded", cta: "Start challenge" },
 };
 
-const PROP_FIRMS = ["ftmo", "myfundedfx", "fundednext"];
+const PROP_FIRMS = ["ftmo", "fundednext", "brightfunded"];
 
 export function AffiliateBlock({ category, exchange, className }: AffiliateBlockProps) {
   // Build list of links to show
