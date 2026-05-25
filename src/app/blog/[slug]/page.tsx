@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import type { ComponentPropsWithoutRef } from "react";
 import { getAllPostSlugs, getPost } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -93,6 +94,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="prose-article">
           <MDXRemote
             source={post.content}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
             components={{
               a: ({ href, children, ...props }: ComponentPropsWithoutRef<"a">) => {
                 const external = href?.startsWith("http");

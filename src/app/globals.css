@@ -219,18 +219,29 @@
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-article thead {
+  background: oklch(0.18 0.005 264 / 0.6);
 }
 .prose-article th {
   color: var(--foreground);
   font-weight: 600;
   text-align: left;
-  padding: 0.6rem 1rem;
-  border-bottom: 2px solid oklch(1 0 0 / 10%);
+  padding: 0.65rem 1rem;
+  border-bottom: 2px solid oklch(1 0 0 / 12%);
+  white-space: nowrap;
 }
 .prose-article td {
   padding: 0.6rem 1rem;
   border-bottom: 1px solid oklch(1 0 0 / 6%);
+  vertical-align: top;
+}
+.prose-article tbody tr:nth-child(even) {
+  background: oklch(1 0 0 / 2%);
 }
 .prose-article hr {
   border: none;
