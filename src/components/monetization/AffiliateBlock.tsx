@@ -46,10 +46,10 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
 
   return (
     <div className={className}>
-      <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
+      <div className="rounded-xl border border-border bg-card p-5">
         {category !== "prop-firm" ? (
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-500/15 shrink-0">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-secondary shrink-0">
               <Gift className="h-5 w-5 text-amber-400" />
             </div>
             <div>
@@ -77,7 +77,7 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-4 py-2 text-sm font-medium hover:border-primary/40 hover:bg-secondary hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium hover:bg-muted hover:text-primary transition-colors"
               >
                 {meta.name}
                 <ExternalLink className="h-3 w-3 text-muted-foreground" />
