@@ -77,7 +77,7 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium hover:bg-muted hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium hover:bg-muted hover:text-primary"
               >
                 {meta.name}
                 <ExternalLink className="h-3 w-3 text-muted-foreground" />

@@ -68,7 +68,7 @@ export default async function CalculatorPage({ params }: PageProps) {
         <CalculatorShell meta={calc} />
       </Suspense>
 
-      <div className="isolate">
+      <div className="isolate [transform:translateZ(0)]">
         <AffiliateBlock category={affiliateCategory} exchange={detectedExchange} className="mt-8" />
       </div>
 
