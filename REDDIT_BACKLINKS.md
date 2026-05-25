@@ -100,7 +100,7 @@ These subreddits allow free tool/resource posts.
 
 | Date | Action | Status |
 |------|--------|--------|
-| May 25 | r/Forex direct post | ⚠️ flagged — Rule 3 |
+| May 25 | r/Forex direct post | ❌ cancelled — Rule 3 promotional ban |
 | May 27 | r/FTMO direct post | pending |
 | May 29 | r/Bybit direct post | ✅ sent |
 | Jun 1 | r/kucoin direct post | pending |
