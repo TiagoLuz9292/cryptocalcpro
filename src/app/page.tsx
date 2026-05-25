@@ -55,7 +55,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-5xl px-4 py-20 md:py-28">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs text-primary font-medium mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               {totalCalcs} Free Trading Tools
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
@@ -233,7 +233,7 @@ export default function HomePage() {
               trading group or save setups for later reference.
             </p>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              Used by prop firm traders navigating FTMO, MyFundedFX, and TopStep evaluations,
+              Used by prop firm traders navigating FTMO, FundedNext, and BrightFunded evaluations,
               by crypto futures traders managing leverage on Bybit and Binance, and by long-term
               investors calculating DCA average costs across Bitcoin, Ethereum, and Solana.
             </p>
