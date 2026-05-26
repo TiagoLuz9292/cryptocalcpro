@@ -38,8 +38,6 @@ export default function ComparePage() {
         </p>
       </div>
 
-      <AffiliateBlock category="exchange" className="mb-10" />
-
       <div className="space-y-10">
         {Object.entries(grouped).map(([label, items]) => (
           <section key={label}>
@@ -64,6 +62,7 @@ export default function ComparePage() {
           </section>
         ))}
       </div>
+      <AffiliateBlock category="exchange" className="mt-12" />
     </div>
   );
 }
