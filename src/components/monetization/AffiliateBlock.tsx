@@ -8,6 +8,7 @@ import { affiliateLinks } from "@/data/affiliates";
 interface AffiliateBlockProps {
   category: "prop-firm" | "exchange" | "generic";
   exchange?: string;
+  featuredExchanges?: string[];
   className?: string;
 }
 
@@ -29,7 +30,7 @@ const EXCHANGE_META: Record<string, { name: string; cta: string }> = {
 const PROP_FIRMS = ["ftmo", "fundednext", "brightfunded"];
 const FEATURED = ["bybit", "binance"];
 
-export function AffiliateBlock({ category, exchange, className }: AffiliateBlockProps) {
+export function AffiliateBlock({ category, exchange, featuredExchanges, className }: AffiliateBlockProps) {
   let keys: string[];
 
   if (category === "prop-firm") {
@@ -47,13 +48,17 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
 
   const isPropFirm = category === "prop-firm";
 
-  // For exchange blocks: if a specific exchange is requested, feature it alone;
-  // otherwise feature Bybit + Binance as the default top two.
+  // Determine which exchanges to feature prominently:
+  // 1. Explicit featuredExchanges array (comparison/blog pages)
+  // 2. Single exchange prop (calculator pages)
+  // 3. Default Bybit + Binance (generic pages)
   const featuredKeys = isPropFirm
     ? []
-    : exchange && affiliateLinks[exchange]
-      ? [exchange]
-      : keys.filter((k) => FEATURED.includes(k));
+    : featuredExchanges && featuredExchanges.length > 0
+      ? featuredExchanges.filter((k) => affiliateLinks[k])
+      : exchange && affiliateLinks[exchange]
+        ? [exchange]
+        : keys.filter((k) => FEATURED.includes(k));
   const secondaryKeys = isPropFirm ? keys : keys.filter((k) => !featuredKeys.includes(k));
 
   const renderLink = (key: string, featured: boolean) => {

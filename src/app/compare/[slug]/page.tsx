@@ -3,10 +3,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { comparisons, getComparisonBySlug } from "@/data/comparisons";
 import { getCalculatorBySlug } from "@/data/calculators";
-import { affiliateLinks } from "@/data/affiliates";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { CheckCircle2, XCircle, MinusCircle, Gift, ArrowRight } from "lucide-react";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
+import { CheckCircle2, XCircle, MinusCircle } from "lucide-react";
 
 export async function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
@@ -164,45 +164,16 @@ export default async function ComparisonPage({
         </>
       )}
 
-      {/* Affiliate buttons */}
+      {/* Affiliate block — feature the two compared entities */}
       {(() => {
-        const isPropFirm = comparison.category === "prop-firm";
         const keyA = comparison.exchangeA ?? comparison.entityA.toLowerCase().replace(/\s/g, "");
         const keyB = comparison.exchangeB ?? comparison.entityB.toLowerCase().replace(/\s/g, "");
-        const linkA = affiliateLinks[keyA];
-        const linkB = affiliateLinks[keyB];
-        if (!linkA && !linkB) return null;
         return (
-          <section className="mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <Gift className="h-4 w-4 text-amber-400" />
-              <h2 className="text-lg font-bold">{isPropFirm ? "Start a Challenge" : "Open an Account"}</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { key: keyA, name: comparison.entityA, link: linkA },
-                { key: keyB, name: comparison.entityB, link: linkB },
-              ].map(({ key, name, link }) =>
-                link ? (
-                  <a
-                    key={key}
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                    className="flex items-center justify-between rounded-xl border border-border bg-card p-5 hover:border-amber-400/40 hover:bg-secondary/20 transition-all group"
-                  >
-                    <div>
-                      <p className="font-semibold group-hover:text-primary transition-colors">{name}</p>
-                      <p className="text-xs text-emerald-400 font-medium mt-0.5">
-                        {isPropFirm ? "Get funded — start your challenge" : "Welcome bonus on first deposit"}
-                      </p>
-                    </div>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0" />
-                  </a>
-                ) : null
-              )}
-            </div>
-          </section>
+          <AffiliateBlock
+            category={comparison.category === "prop-firm" ? "prop-firm" : "exchange"}
+            featuredExchanges={[keyA, keyB]}
+            className="mb-10"
+          />
         );
       })()}
 

@@ -12,6 +12,7 @@ export interface PostFrontmatter {
   category: string;
   keywords?: string[];
   featured?: boolean;
+  featuredExchanges?: string[];
 }
 
 export interface PostMeta extends PostFrontmatter {

@@ -112,9 +112,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </article>
 
-      {post.category === "prop-firm" && (
-        <AffiliateBlock category="prop-firm" className="mt-10" />
-      )}
+      <AffiliateBlock
+        category={post.category === "prop-firm" ? "prop-firm" : "exchange"}
+        featuredExchanges={post.featuredExchanges}
+        className="mt-10"
+      />
 
       <div className="mt-12 pt-8 border-t border-border">
         <Link
