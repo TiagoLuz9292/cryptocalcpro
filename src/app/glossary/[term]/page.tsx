@@ -7,6 +7,7 @@ import { getCalculatorBySlug } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
+import { StickyPartnerBar } from "@/components/monetization/StickyPartnerBar";
 
 interface PageProps {
   params: Promise<{ term: string }>;
@@ -44,6 +45,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
+      <StickyPartnerBar />
       <div className="mb-6">
         <Breadcrumbs
           items={[
