@@ -1,6 +1,11 @@
 import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 
 export function calcDca(inputs: CalculatorInputs): CalculatorResult[] {
+  // Scheduled DCA mode: initialInvestment + recurringAmount + periods + currentPrice + expectedPrice
+  if (inputs.recurringAmount !== undefined) {
+    return calcScheduledDca(inputs);
+  }
+
   const currentPrice = parseFloat(inputs.currentPrice);
 
   const entries: { price: number; amount: number }[] = [];
@@ -63,6 +68,73 @@ export function calcDca(inputs: CalculatorInputs): CalculatorResult[] {
       value: pnlPercent.toFixed(2),
       unit: "%",
       color: pnlPercent >= 0 ? "success" : "danger",
+    },
+  ];
+}
+
+function calcScheduledDca(inputs: CalculatorInputs): CalculatorResult[] {
+  const initialInvestment = parseFloat(inputs.initialInvestment) || 0;
+  const recurringAmount = parseFloat(inputs.recurringAmount);
+  const periods = parseFloat(inputs.periods);
+  const currentPrice = parseFloat(inputs.currentPrice);
+  const expectedPrice = parseFloat(inputs.expectedPrice);
+
+  if ([recurringAmount, periods, currentPrice, expectedPrice].some(isNaN)) return [];
+  if (periods < 1 || currentPrice <= 0 || expectedPrice <= 0) return [];
+
+  const totalInvested = initialInvestment + recurringAmount * periods;
+  // Simulate averaging: assume uniform buys, average price ≈ currentPrice (simple model)
+  const totalUnits = (initialInvestment > 0 ? initialInvestment / currentPrice : 0)
+    + recurringAmount * periods / currentPrice;
+  const projectedValue = totalUnits * expectedPrice;
+  const projectedPnl = projectedValue - totalInvested;
+  const projectedPnlPercent = (projectedPnl / totalInvested) * 100;
+  const currentValue = totalUnits * currentPrice;
+
+  return [
+    {
+      id: "totalInvested",
+      label: "Total Invested",
+      value: totalInvested.toFixed(2),
+      unit: "USD",
+      highlighted: true,
+      color: "default",
+      description: `${periods} × $${recurringAmount}${initialInvestment > 0 ? ` + $${initialInvestment} initial` : ""}`,
+    },
+    {
+      id: "projectedValue",
+      label: "Projected Value",
+      value: projectedValue.toFixed(2),
+      unit: "USD",
+      highlighted: true,
+      color: projectedPnl >= 0 ? "success" : "danger",
+      description: `At $${expectedPrice} exit price`,
+    },
+    {
+      id: "projectedPnl",
+      label: "Projected P&L",
+      value: projectedPnl.toFixed(2),
+      unit: "USD",
+      highlighted: true,
+      color: projectedPnl >= 0 ? "success" : "danger",
+    },
+    {
+      id: "projectedPnlPercent",
+      label: "Projected Return",
+      value: projectedPnlPercent.toFixed(1),
+      unit: "%",
+      color: projectedPnlPercent >= 0 ? "success" : "danger",
+    },
+    {
+      id: "currentValue",
+      label: "Current Value",
+      value: currentValue.toFixed(2),
+      unit: "USD",
+    },
+    {
+      id: "totalUnits",
+      label: "Total Units Accumulated",
+      value: totalUnits.toFixed(6),
     },
   ];
 }

@@ -1623,6 +1623,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "Bybit Maker Fee", type: "number", unit: "%", placeholder: "0.02", min: 0, max: 1, step: 0.001, defaultValue: 0.02, helpText: "Bybit futures maker: 0.02%. Spot maker: 0.10%." },
       { id: "takerFee", label: "Bybit Taker Fee", type: "number", unit: "%", placeholder: "0.055", min: 0, max: 1, step: 0.001, defaultValue: 0.055, helpText: "Bybit futures taker: 0.055%. Spot taker: 0.10%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 100, step: 1, defaultValue: 1, helpText: "Fees on futures are on notional value (position size × leverage)." },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "binance-trading-fee-calculator", "leverage-liquidation-calculator"],
     faqs: [
@@ -1650,6 +1652,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "Binance Maker Fee", type: "number", unit: "%", placeholder: "0.02", min: 0, max: 1, step: 0.001, defaultValue: 0.02, helpText: "Binance futures maker: 0.02%. Spot maker: 0.10%." },
       { id: "takerFee", label: "Binance Taker Fee", type: "number", unit: "%", placeholder: "0.04", min: 0, max: 1, step: 0.001, defaultValue: 0.04, helpText: "Binance futures taker: 0.04%. Spot taker: 0.10%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 125, step: 1, defaultValue: 1 },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "bnb-position-size-calculator"],
     faqs: [
@@ -1818,6 +1822,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "OKX Maker Fee", type: "number", unit: "%", placeholder: "0.02", min: 0, max: 1, step: 0.001, defaultValue: 0.02, helpText: "OKX futures maker: 0.02%. Spot maker: 0.08%." },
       { id: "takerFee", label: "OKX Taker Fee", type: "number", unit: "%", placeholder: "0.05", min: 0, max: 1, step: 0.001, defaultValue: 0.05, helpText: "OKX futures taker: 0.05%. Spot taker: 0.10%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 125, step: 1, defaultValue: 1 },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "binance-trading-fee-calculator"],
     faqs: [
@@ -2011,6 +2017,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "Kraken Maker Fee", type: "number", unit: "%", placeholder: "0.16", min: 0, max: 1, step: 0.001, defaultValue: 0.16, helpText: "Kraken starter maker fee: 0.16%. Reduces to 0% at $50M+ monthly volume." },
       { id: "takerFee", label: "Kraken Taker Fee", type: "number", unit: "%", placeholder: "0.26", min: 0, max: 1, step: 0.001, defaultValue: 0.26, helpText: "Kraken starter taker fee: 0.26%. Reduces to 0.10% at $50M+ monthly volume." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 5, step: 1, defaultValue: 1 },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "binance-trading-fee-calculator", "bybit-trading-fee-calculator"],
     faqs: [
@@ -2038,6 +2046,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "MEXC Maker Fee", type: "number", unit: "%", placeholder: "0.000", min: 0, max: 1, step: 0.001, defaultValue: 0, helpText: "MEXC futures maker: 0.000% (zero). Spot maker: 0.000%." },
       { id: "takerFee", label: "MEXC Taker Fee", type: "number", unit: "%", placeholder: "0.010", min: 0, max: 1, step: 0.001, defaultValue: 0.010, helpText: "MEXC futures taker: 0.010%. Spot taker: 0.050%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 200, step: 1, defaultValue: 1, helpText: "MEXC offers up to 200× leverage on perpetual futures." },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "kucoin-trading-fee-calculator"],
     faqs: [
@@ -2065,6 +2075,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "KuCoin Maker Fee", type: "number", unit: "%", placeholder: "0.02", min: 0, max: 1, step: 0.001, defaultValue: 0.02, helpText: "KuCoin futures maker: 0.020%. Spot maker: 0.080%." },
       { id: "takerFee", label: "KuCoin Taker Fee", type: "number", unit: "%", placeholder: "0.06", min: 0, max: 1, step: 0.001, defaultValue: 0.06, helpText: "KuCoin futures taker: 0.060%. Spot taker: 0.100%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 100, step: 1, defaultValue: 1 },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "mexc-trading-fee-calculator"],
     faqs: [
@@ -2092,6 +2104,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "BingX Maker Fee", type: "number", unit: "%", placeholder: "0.020", min: 0, max: 1, step: 0.001, defaultValue: 0.020, helpText: "BingX perpetual swaps maker: 0.020%. Spot maker: 0.100%." },
       { id: "takerFee", label: "BingX Taker Fee", type: "number", unit: "%", placeholder: "0.050", min: 0, max: 1, step: 0.001, defaultValue: 0.050, helpText: "BingX perpetual swaps taker: 0.050%. Spot taker: 0.100%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 150, step: 1, defaultValue: 1, helpText: "BingX supports up to 150× leverage on perpetual swaps." },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "phemex-trading-fee-calculator"],
     faqs: [
@@ -2119,6 +2133,8 @@ The hardest part of swing trading is holding a position that temporarily moves a
       { id: "makerFee", label: "Phemex Maker Fee", type: "number", unit: "%", placeholder: "0.010", min: 0, max: 1, step: 0.001, defaultValue: 0.010, helpText: "Phemex perpetuals maker: 0.010%. Spot maker: 0.100%." },
       { id: "takerFee", label: "Phemex Taker Fee", type: "number", unit: "%", placeholder: "0.060", min: 0, max: 1, step: 0.001, defaultValue: 0.060, helpText: "Phemex perpetuals taker: 0.060%. Spot taker: 0.100%." },
       { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "1", min: 1, max: 100, step: 1, defaultValue: 1 },
+      { id: "entryPrice", label: "Entry Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 50000", min: 0.0001, step: 0.01 },
+      { id: "exitPrice", label: "Exit Price (optional)", type: "number", unit: "USD", placeholder: "e.g. 52000", min: 0.0001, step: 0.01 },
     ],
     relatedSlugs: ["trading-fee-calculator", "bybit-trading-fee-calculator", "bingx-trading-fee-calculator"],
     faqs: [

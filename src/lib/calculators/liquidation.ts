@@ -3,7 +3,7 @@ import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 export function calcLiquidation(inputs: CalculatorInputs): CalculatorResult[] {
   const entry = parseFloat(inputs.entryPrice);
   const leverage = parseFloat(inputs.leverage);
-  const side = inputs.positionSide ?? "long";
+  const side = inputs.positionSide ?? inputs.direction ?? "long";
   const mm = parseFloat(inputs.maintenanceMargin) / 100;
 
   if ([entry, leverage, mm].some(isNaN) || leverage < 1) return [];
