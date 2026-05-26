@@ -76,7 +76,7 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
 
   return (
     <div className={className}>
-      <div className="rounded-xl border border-border bg-card p-5">
+      <div className="rounded-xl border border-amber-400/40 bg-card p-5 shadow-[0_0_15px_rgba(251,191,36,0.15),0_0_40px_rgba(251,191,36,0.07)]">
         <div className="flex items-center gap-3 mb-4">
           <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-secondary shrink-0">
             <Gift className="h-5 w-5 text-amber-400" />
