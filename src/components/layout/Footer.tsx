@@ -3,7 +3,15 @@ import { siteConfig } from "@/data/site";
 import { categories } from "@/data/categories";
 import { calculators } from "@/data/calculators";
 import { comparisons } from "@/data/comparisons";
-import { BarChart2 } from "lucide-react";
+import { affiliateLinks } from "@/data/affiliates";
+import { BarChart2, ExternalLink } from "lucide-react";
+
+const EXCHANGE_NAMES: Record<string, string> = {
+  bybit: "Bybit", binance: "Binance", okx: "OKX", mexc: "MEXC",
+  kucoin: "KuCoin", bingx: "BingX", phemex: "Phemex",
+};
+const PROP_FIRMS = ["ftmo", "fundednext", "brightfunded"];
+const exchangeKeys = Object.keys(affiliateLinks).filter((k) => !PROP_FIRMS.includes(k));
 
 export function Footer() {
   const featuredCalcs = calculators.slice(0, 4);
@@ -12,6 +20,26 @@ export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-card mt-16">
       <div className="container mx-auto max-w-6xl px-4 py-12">
+
+        {/* Partner exchanges row */}
+        <div className="mb-10 pb-10 border-b border-border/50">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Partner Exchanges</p>
+          <div className="flex flex-wrap gap-3">
+            {exchangeKeys.map((key) => (
+              <a
+                key={key}
+                href={affiliateLinks[key]}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-amber-400 transition-colors"
+              >
+                {EXCHANGE_NAMES[key] ?? key}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-3">
             <Link href="/" className="flex items-center gap-2 font-bold">
