@@ -1,122 +1,143 @@
 "use client";
 
 import Link from "next/link";
-import { ExternalLink, Gift } from "lucide-react";
+import { ExternalLink, TrendingUp, Trophy } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { affiliateLinks } from "@/data/affiliates";
 
-interface AffiliateBlockProps {
-  category: "prop-firm" | "exchange" | "generic";
+interface PartnerBlockProps {
   exchange?: string;
   featuredExchanges?: string[];
   className?: string;
 }
 
-const EXCHANGE_META: Record<string, { name: string; cta: string }> = {
-  bybit:   { name: "Bybit",   cta: "Open account" },
-  binance: { name: "Binance", cta: "Open account" },
-  okx:     { name: "OKX",     cta: "Open account" },
-  mexc:    { name: "MEXC",    cta: "Open account" },
-  kraken:  { name: "Kraken",  cta: "Open account" },
-  kucoin:  { name: "KuCoin",  cta: "Open account" },
-  bingx:   { name: "BingX",   cta: "Open account" },
-  phemex:  { name: "Phemex",  cta: "Open account" },
-  bitget:  { name: "Bitget",  cta: "Open account" },
-  ftmo:         { name: "FTMO",         cta: "Start challenge" },
-  fundednext:   { name: "FundedNext",   cta: "Start challenge" },
-  brightfunded: { name: "BrightFunded", cta: "Start challenge" },
+const EXCHANGE_META: Record<string, { name: string }> = {
+  bybit:        { name: "Bybit" },
+  binance:      { name: "Binance" },
+  okx:          { name: "OKX" },
+  mexc:         { name: "MEXC" },
+  kraken:       { name: "Kraken" },
+  kucoin:       { name: "KuCoin" },
+  bingx:        { name: "BingX" },
+  phemex:       { name: "Phemex" },
+  bitget:       { name: "Bitget" },
+  ftmo:         { name: "FTMO" },
+  fundednext:   { name: "FundedNext" },
+  brightfunded: { name: "BrightFunded" },
 };
 
-const PROP_FIRMS = ["ftmo", "fundednext", "brightfunded"];
-const FEATURED = ["bybit", "binance"];
+const PROP_FIRM_KEYS = ["ftmo", "fundednext", "brightfunded"];
+const DEFAULT_FEATURED = ["bybit", "binance"];
 
-export function AffiliateBlock({ category, exchange, featuredExchanges, className }: AffiliateBlockProps) {
-  let keys: string[];
+export function PartnerBlock({ exchange, featuredExchanges, className }: PartnerBlockProps) {
+  const allExchangeKeys = Object.keys(affiliateLinks).filter((k) => !PROP_FIRM_KEYS.includes(k));
+  const propFirmKeys = PROP_FIRM_KEYS.filter((k) => !!affiliateLinks[k]);
 
-  if (category === "prop-firm") {
-    keys = PROP_FIRMS.filter((k) => affiliateLinks[k]);
-  } else if (exchange && affiliateLinks[exchange]) {
-    const others = Object.keys(affiliateLinks).filter(
-      (k) => k !== exchange && !PROP_FIRMS.includes(k)
-    );
-    keys = [exchange, ...others];
-  } else {
-    keys = Object.keys(affiliateLinks).filter((k) => !PROP_FIRMS.includes(k));
-  }
-
-  if (keys.length === 0) return null;
-
-  const isPropFirm = category === "prop-firm";
-
-  // Determine which exchanges to feature prominently:
-  // 1. Explicit featuredExchanges array (comparison/blog pages)
-  // 2. Single exchange prop (calculator pages)
-  // 3. Default Bybit + Binance (generic pages)
-  const featuredKeys = isPropFirm
-    ? []
-    : featuredExchanges && featuredExchanges.length > 0
-      ? featuredExchanges.filter((k) => affiliateLinks[k])
-      : exchange && affiliateLinks[exchange]
+  const rawFeatured = featuredExchanges?.filter((k) => !PROP_FIRM_KEYS.includes(k) && !!affiliateLinks[k]);
+  const featuredKeys =
+    rawFeatured && rawFeatured.length > 0
+      ? rawFeatured
+      : exchange && affiliateLinks[exchange] && !PROP_FIRM_KEYS.includes(exchange)
         ? [exchange]
-        : keys.filter((k) => FEATURED.includes(k));
-  const secondaryKeys = isPropFirm ? keys : keys.filter((k) => !featuredKeys.includes(k));
+        : allExchangeKeys.filter((k) => DEFAULT_FEATURED.includes(k));
 
-  const renderLink = (key: string, featured: boolean) => {
-    const link = affiliateLinks[key];
-    const meta = EXCHANGE_META[key];
-    if (!link || !meta) return null;
-    return (
-      <Link
-        key={key}
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer sponsored"
-        onClick={() => track("affiliate_click", { exchange: key, category })}
-        className={
-          featured
-            ? "flex-1 min-w-[140px] inline-flex items-center justify-center gap-2 rounded-lg border border-amber-400/40 bg-amber-400/10 px-5 py-3 text-sm font-semibold text-amber-300 hover:bg-amber-400/20 hover:text-amber-200 transition-colors"
-            : "inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium hover:bg-muted hover:text-primary transition-colors"
-        }
-      >
-        {meta.name}
-        <ExternalLink className={featured ? "h-3.5 w-3.5" : "h-3 w-3 text-muted-foreground"} />
-      </Link>
-    );
-  };
+  const secondaryExchangeKeys = allExchangeKeys.filter((k) => !featuredKeys.includes(k));
 
   return (
     <div className={className}>
-      <div className="rounded-xl border border-amber-400/40 bg-card p-5 shadow-[0_0_30px_8px_rgba(251,191,36,0.18),0_0_70px_20px_rgba(251,191,36,0.08)]">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-secondary shrink-0">
-            <Gift className="h-5 w-5 text-amber-400" />
+      <div className="rounded-xl border border-amber-400/30 bg-card overflow-hidden shadow-[0_0_30px_8px_rgba(251,191,36,0.14),0_0_70px_20px_rgba(251,191,36,0.06)]">
+        <div className="flex flex-col md:flex-row">
+
+          {/* Left — Crypto Exchanges 60% */}
+          <div className="md:w-[60%] p-5 border-b md:border-b-0 md:border-r border-border/50">
+            <div className="flex items-center gap-2 mb-1">
+              <TrendingUp className="h-4 w-4 text-amber-400 shrink-0" />
+              <p className="text-sm font-bold text-amber-400">Get Your First Deposit Bonus</p>
+            </div>
+            <p className="text-xs text-muted-foreground mb-4">Partner exchanges — welcome rewards for new accounts</p>
+
+            {featuredKeys.length > 0 && (
+              <div className="flex gap-2 mb-3">
+                {featuredKeys.map((k) => {
+                  const link = affiliateLinks[k];
+                  const name = EXCHANGE_META[k]?.name ?? k;
+                  if (!link) return null;
+                  return (
+                    <Link
+                      key={k}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      onClick={() => track("affiliate_click", { exchange: k, panel: "exchange" })}
+                      className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-2 rounded-lg border border-amber-400/40 bg-amber-400/10 px-4 py-3 text-sm font-semibold text-amber-300 hover:bg-amber-400/20 hover:text-amber-200 transition-colors"
+                    >
+                      {name}
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+
+            {secondaryExchangeKeys.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {secondaryExchangeKeys.map((k) => {
+                  const link = affiliateLinks[k];
+                  const name = EXCHANGE_META[k]?.name ?? k;
+                  if (!link) return null;
+                  return (
+                    <Link
+                      key={k}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      onClick={() => track("affiliate_click", { exchange: k, panel: "exchange" })}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-secondary px-3 py-1.5 text-xs font-medium hover:bg-muted hover:text-primary transition-colors"
+                    >
+                      {name}
+                      <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
           </div>
-          <div>
-            <p className="font-bold text-base text-amber-400 leading-tight">
-              {isPropFirm ? "Get Funded — Start a Challenge" : "Get Your First Deposit Bonus"}
-            </p>
-            <p className="text-xs text-emerald-400 font-bold mt-0.5">
-              {isPropFirm
-                ? "Partner prop firms below — earn while you trade"
-                : "All partner exchanges below offer welcome rewards for new accounts"}
-            </p>
+
+          {/* Right — Prop Firms 40% */}
+          <div className="md:w-[40%] p-5">
+            <div className="flex items-center gap-2 mb-1">
+              <Trophy className="h-4 w-4 text-emerald-400 shrink-0" />
+              <p className="text-sm font-bold text-emerald-400">Get Funded — Start a Challenge</p>
+            </div>
+            <p className="text-xs text-muted-foreground mb-4">Partner prop firms — trade with their capital</p>
+
+            <div className="flex flex-col gap-2">
+              {propFirmKeys.map((k) => {
+                const link = affiliateLinks[k];
+                const name = EXCHANGE_META[k]?.name ?? k;
+                if (!link) return null;
+                return (
+                  <Link
+                    key={k}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    onClick={() => track("affiliate_click", { exchange: k, panel: "prop-firm" })}
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm font-semibold text-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300 transition-colors"
+                  >
+                    {name}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                );
+              })}
+            </div>
           </div>
+
         </div>
-
-        {/* Featured row — Bybit + Binance larger */}
-        {featuredKeys.length > 0 && (
-          <div className="flex gap-3 mb-3">
-            {featuredKeys.map((k) => renderLink(k, true))}
-          </div>
-        )}
-
-        {/* Secondary row — remaining exchanges smaller */}
-        {secondaryKeys.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-2">
-            {secondaryKeys.map((k) => renderLink(k, false))}
-          </div>
-        )}
       </div>
     </div>
   );
 }
+
+// Backwards-compat alias — remove after all call sites migrated
+export { PartnerBlock as AffiliateBlock };

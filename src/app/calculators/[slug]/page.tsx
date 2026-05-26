@@ -13,7 +13,7 @@ import { RelatedTools } from "@/components/content/RelatedTools";
 import { RelatedPosts } from "@/components/content/RelatedPosts";
 import { KeyTermsBlock } from "@/components/content/KeyTermsBlock";
 import { AdSlot } from "@/components/monetization/AdSlot";
-import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
+import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { getRelatedPosts } from "@/lib/content/relatedPosts";
 
 interface PageProps {
@@ -41,8 +41,6 @@ export default async function CalculatorPage({ params }: PageProps) {
 
   const EXCHANGE_PREFIXES = ["bybit", "binance", "okx", "mexc", "kraken", "kucoin", "bitget", "gate", "bingx", "phemex"];
   const detectedExchange = EXCHANGE_PREFIXES.find((ex) => slug.startsWith(ex));
-  const affiliateCategory = calc.category === "prop-firm" ? "prop-firm" : "exchange";
-
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <JsonLd schema={buildCalculatorSchema(calc)} />
@@ -69,7 +67,7 @@ export default async function CalculatorPage({ params }: PageProps) {
       </Suspense>
 
       <div className="isolate [transform:translateZ(0)]">
-        <AffiliateBlock category={affiliateCategory} exchange={detectedExchange} className="mt-8" />
+        <PartnerBlock exchange={detectedExchange} className="mt-8" />
       </div>
 
       <EducationBlock

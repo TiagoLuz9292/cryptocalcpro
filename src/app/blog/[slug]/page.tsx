@@ -8,7 +8,7 @@ import { getAllPostSlugs, getPost } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
+import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { siteConfig } from "@/data/site";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
@@ -112,8 +112,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </article>
 
-      <AffiliateBlock
-        category={post.category === "prop-firm" ? "prop-firm" : "exchange"}
+      <PartnerBlock
         featuredExchanges={post.featuredExchanges}
         className="mt-10"
       />

@@ -5,7 +5,7 @@ import { comparisons, getComparisonBySlug } from "@/data/comparisons";
 import { getCalculatorBySlug } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
+import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { CheckCircle2, XCircle, MinusCircle } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -169,8 +169,7 @@ export default async function ComparisonPage({
         const keyA = comparison.exchangeA ?? comparison.entityA.toLowerCase().replace(/\s/g, "");
         const keyB = comparison.exchangeB ?? comparison.entityB.toLowerCase().replace(/\s/g, "");
         return (
-          <AffiliateBlock
-            category={comparison.category === "prop-firm" ? "prop-firm" : "exchange"}
+          <PartnerBlock
             featuredExchanges={[keyA, keyB]}
             className="mb-10"
           />

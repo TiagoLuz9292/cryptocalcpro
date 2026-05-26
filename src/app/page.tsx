@@ -6,7 +6,7 @@ import { getAllPosts } from "@/lib/content/mdx";
 import { ArrowRight, BarChart2, Shield, TrendingUp, Zap } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
+import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 
 const features = [
   {
@@ -115,9 +115,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partner Exchanges */}
+      {/* Partners */}
       <section className="container mx-auto max-w-5xl px-4 pb-16">
-        <AffiliateBlock category="exchange" />
+        <PartnerBlock />
       </section>
 
       {/* Features */}
