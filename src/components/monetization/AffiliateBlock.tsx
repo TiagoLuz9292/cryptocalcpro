@@ -102,7 +102,7 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
 
         {/* Secondary row — remaining exchanges smaller */}
         {secondaryKeys.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-2">
             {secondaryKeys.map((k) => renderLink(k, false))}
           </div>
         )}
