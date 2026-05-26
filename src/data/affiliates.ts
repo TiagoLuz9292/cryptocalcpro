@@ -10,7 +10,7 @@ export const affiliateLinks: Record<string, string> = {
   kucoin:  "https://www.kucoin.com/r/rf/QBS78CC1",
   bingx:   "https://bingxdao.com/invite/Z1QDVI/",
   phemex:  "https://phemex.com/register?referralCode=GD22Q9",
-  // ftmo: "https://trader.ftmo.com/?affiliates=YOURCODE",
+  ftmo: "https://trader.ftmo.com/?affiliates=ZVsfRgEpXESkzpNiTbFW",
   // fundednext: "https://fundednext.com/?ref=YOURCODE",
   brightfunded: "https://brightfunded.com/a/kqx2nL8HSxSLCwdDJepL7Q",
 };
