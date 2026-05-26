@@ -3,6 +3,7 @@ import { calculators } from "@/data/calculators";
 import { categories } from "@/data/categories";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CalculatorSearch } from "@/components/calculators/CalculatorSearch";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Crypto Trading Calculators",
@@ -42,6 +43,7 @@ export default function CalculatorsPage() {
       </div>
 
       <CalculatorSearch calculators={clientCalcs} categories={clientCats} />
+      <AffiliateBlock category="exchange" className="mt-12" />
     </div>
   );
 }

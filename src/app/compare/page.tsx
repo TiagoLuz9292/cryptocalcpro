@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { comparisons } from "@/data/comparisons";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -36,6 +37,8 @@ export default function ComparePage() {
           leverage levels, exchanges, and trading styles.
         </p>
       </div>
+
+      <AffiliateBlock category="exchange" className="mb-10" />
 
       <div className="space-y-10">
         {Object.entries(grouped).map(([label, items]) => (

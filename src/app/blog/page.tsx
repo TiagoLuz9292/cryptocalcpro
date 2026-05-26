@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { BlogFilter } from "@/components/blog/BlogFilter";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Crypto Trading Blog",
@@ -30,6 +31,7 @@ export default function BlogPage() {
       ) : (
         <BlogFilter posts={posts} />
       )}
+      <AffiliateBlock category="exchange" className="mt-12" />
     </div>
   );
 }
