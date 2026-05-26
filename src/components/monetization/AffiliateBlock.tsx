@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ExternalLink, Gift } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { affiliateLinks } from "@/data/affiliates";
 
 interface AffiliateBlockProps {
@@ -88,6 +91,7 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium hover:bg-muted hover:text-primary"
+                onClick={() => track("affiliate_click", { exchange: key, category })}
               >
                 {meta.name}
                 <ExternalLink className="h-3 w-3 text-muted-foreground" />
