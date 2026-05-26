@@ -6,6 +6,7 @@ import { glossaryTerms, getTermBySlug } from "@/data/glossary";
 import { getCalculatorBySlug } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 
 interface PageProps {
   params: Promise<{ term: string }>;
@@ -105,6 +106,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      <AffiliateBlock category="exchange" className="mt-12" />
     </div>
   );
 }

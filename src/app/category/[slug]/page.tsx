@@ -5,6 +5,7 @@ import { categories, getCategoryBySlug } from "@/data/categories";
 import { getCalculatorsByCategory } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { AffiliateBlock } from "@/components/monetization/AffiliateBlock";
 import { ArrowRight } from "lucide-react";
 
 interface PageProps {
@@ -78,6 +79,11 @@ export default async function CategoryPage({ params }: PageProps) {
       ) : (
         <p className="text-muted-foreground">No calculators in this category yet.</p>
       )}
+
+      <AffiliateBlock
+        category={slug === "prop-firm" ? "prop-firm" : "exchange"}
+        className="mt-12"
+      />
     </div>
   );
 }
