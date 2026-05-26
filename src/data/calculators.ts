@@ -127,7 +127,7 @@ Most professional traders risk 0.5%–2% per trade. Higher win rates and better 
 
   {
     slug: "risk-reward-calculator",
-    name: "Risk Reward Calculator",
+    name: "Crypto Risk Reward Calculator",
     shortName: "Risk:Reward",
     description:
       "Calculate your risk-to-reward ratio, potential profit/loss, and breakeven win rate for any crypto trade.",
@@ -338,7 +338,7 @@ Some firms use a trailing drawdown that tracks your highest balance rather than 
 
   {
     slug: "leverage-liquidation-calculator",
-    name: "Leverage Liquidation Calculator",
+    name: "Crypto Leverage Liquidation Calculator",
     shortName: "Liquidation Price",
     description:
       "Calculate the exact liquidation price for any leveraged crypto position. Know your liquidation distance before entering any leveraged trade.",
@@ -457,7 +457,7 @@ Where MM% is the maintenance margin percentage.
 
   {
     slug: "dca-calculator",
-    name: "DCA Calculator",
+    name: "Crypto DCA Calculator",
     shortName: "DCA",
     description:
       "Calculate your average entry price, total cost, and P&L when dollar cost averaging into any cryptocurrency.",
@@ -591,7 +591,7 @@ DCA wins when markets are declining or sideways. Lump sum wins when markets tren
 
   {
     slug: "trading-fee-calculator",
-    name: "Trading Fee Calculator",
+    name: "Crypto Trading Fee Calculator",
     shortName: "Fee Calculator",
     description:
       "Calculate exact trading fees for crypto futures and spot trades. See how fees affect your net P&L across different exchanges and fee tiers.",
@@ -725,7 +725,7 @@ Lower fees aren't always better if execution quality suffers. Consider:
 
   {
     slug: "compounding-calculator",
-    name: "Compounding Calculator",
+    name: "Crypto Compounding Calculator",
     shortName: "Compounding",
     description:
       "Calculate the power of compounded returns for your crypto trading account. Model monthly returns, contributions, and long-term growth projections.",
@@ -2171,6 +2171,114 @@ The hardest part of swing trading is holding a position that temporarily moves a
     educationContent: {
       title: "Binance Futures Liquidation: How It Works",
       body: `Binance uses mark price (not last price) for liquidation calculations. Mark price is derived from the index price — a weighted average of spot prices across multiple exchanges — plus a funding basis. This prevents liquidations caused by temporary price spikes on Binance alone.\n\n**Key Binance-specific liquidation details:**\n- Liquidation occurs when margin balance falls below maintenance margin requirement\n- Binance's insurance fund absorbs losses before auto-deleveraging (ADL) kicks in\n- Cross margin: entire futures wallet is collateral — one position can affect others\n- Isolated margin: only allocated margin is at risk — recommended for most traders\n- BTCUSDT maintenance margin: 0.40% for standard retail position sizes\n\nApproximate formula for long positions: Liquidation price ≈ Entry × (1 − 1/Leverage + MaintenanceMargin%). Always use isolated margin to cap your maximum loss per position.`,
+    },
+  },
+
+  // --- Leverage: MEXC Liquidation ---
+  {
+    slug: "mexc-liquidation-calculator",
+    parentSlug: "leverage-liquidation-calculator",
+    name: "MEXC Liquidation Price Calculator",
+    shortName: "MEXC Liquidation",
+    description: "Calculate your exact liquidation price on MEXC perpetual futures using MEXC's maintenance margin rates.",
+    longDescription: "MEXC-specific liquidation calculator for perpetual futures with up to 200× leverage.",
+    category: "leverage",
+    keywords: ["mexc liquidation calculator", "mexc liquidation price", "mexc futures liquidation", "mexc leverage calculator", "mexc perpetual futures liquidation"],
+    fields: [
+      { id: "entryPrice", label: "Entry Price", type: "number", unit: "USD", placeholder: "50000", min: 0.0001, step: 0.01, defaultValue: 50000 },
+      { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "10", min: 1, max: 200, step: 1, defaultValue: 10 },
+      { id: "direction", label: "Position Type", type: "select", options: [{ value: "long", label: "Long (Buy)" }, { value: "short", label: "Short (Sell)" }], defaultValue: "long" },
+      { id: "maintenanceMargin", label: "MEXC Maintenance Margin", type: "number", unit: "%", placeholder: "0.5", min: 0, max: 5, step: 0.1, defaultValue: 0.5, helpText: "MEXC BTC perpetual: ~0.5% maintenance margin for standard positions." },
+    ],
+    relatedSlugs: ["leverage-liquidation-calculator", "mexc-trading-fee-calculator", "bybit-liquidation-calculator"],
+    faqs: [
+      { question: "What is MEXC's maintenance margin for perpetual futures?", answer: "MEXC uses a tiered maintenance margin system. For BTC perpetuals, the base maintenance margin is approximately 0.5% for standard retail positions. MEXC supports up to 200× leverage, which means liquidation can occur on moves as small as 0.5%." },
+      { question: "Is 200x leverage on MEXC safe?", answer: "200× leverage on MEXC is extremely high risk. At 200× leverage, a 0.5% adverse move wipes your entire margin. Even a single funding rate payment can approach liquidation. Only experienced traders should use leverage above 20×, and even then with very tight stops." },
+    ],
+    educationContent: {
+      title: "MEXC Perpetual Futures: High Leverage and Liquidation Risk",
+      body: `MEXC supports up to 200× leverage on perpetual futures — among the highest available. While this enables very capital-efficient positions, the liquidation risk scales directly with leverage.\n\n**MEXC liquidation key facts:**\n- At 200× leverage, liquidation occurs on a ~0.5% adverse move\n- At 10× leverage, liquidation occurs on a ~9.5% adverse move\n- MEXC uses mark price (not last price) to trigger liquidations\n- Maintenance margin is approximately 0.5% for standard BTC positions\n\n**Practical recommendation:** Use isolated margin mode on MEXC to cap your maximum loss per trade. MEXC's zero maker fee structure means the cost of using limit orders is essentially zero — always use limit orders to avoid the 0.010% taker fee and to get better entry prices.`,
+    },
+  },
+
+  // --- Leverage: KuCoin Liquidation ---
+  {
+    slug: "kucoin-liquidation-calculator",
+    parentSlug: "leverage-liquidation-calculator",
+    name: "KuCoin Liquidation Price Calculator",
+    shortName: "KuCoin Liquidation",
+    description: "Calculate your exact liquidation price on KuCoin futures using KuCoin's maintenance margin rates.",
+    longDescription: "KuCoin-specific liquidation calculator for perpetual futures with up to 100× leverage.",
+    category: "leverage",
+    keywords: ["kucoin liquidation calculator", "kucoin liquidation price", "kucoin futures liquidation", "kucoin leverage calculator", "kucoin perpetual futures liquidation"],
+    fields: [
+      { id: "entryPrice", label: "Entry Price", type: "number", unit: "USD", placeholder: "50000", min: 0.0001, step: 0.01, defaultValue: 50000 },
+      { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "10", min: 1, max: 100, step: 1, defaultValue: 10 },
+      { id: "direction", label: "Position Type", type: "select", options: [{ value: "long", label: "Long (Buy)" }, { value: "short", label: "Short (Sell)" }], defaultValue: "long" },
+      { id: "maintenanceMargin", label: "KuCoin Maintenance Margin", type: "number", unit: "%", placeholder: "0.5", min: 0, max: 5, step: 0.1, defaultValue: 0.5, helpText: "KuCoin BTC perpetual: ~0.5% maintenance margin for standard positions." },
+    ],
+    relatedSlugs: ["leverage-liquidation-calculator", "kucoin-trading-fee-calculator", "bybit-liquidation-calculator"],
+    faqs: [
+      { question: "What is KuCoin's maintenance margin for BTC futures?", answer: "KuCoin futures use a tiered maintenance margin system. For XBTUSDTM (BTC perpetual), the base maintenance margin is approximately 0.5% for standard retail positions. Always verify the current rate in KuCoin's contract details." },
+      { question: "Does KuCoin use mark price or last price for liquidation?", answer: "KuCoin uses mark price for liquidation calculations, similar to Binance and Bybit. Mark price is based on the index price plus a decaying funding basis, preventing liquidations triggered by temporary price anomalies on KuCoin's order book." },
+    ],
+    educationContent: {
+      title: "KuCoin Futures Liquidation Mechanics",
+      body: `KuCoin Futures (KuCoin's derivatives platform) uses mark price liquidation and a tiered maintenance margin system. Understanding these mechanics is essential for managing leveraged positions safely.\n\n**KuCoin liquidation details:**\n- Mark price protects against manipulation-triggered liquidations\n- Maintenance margin: ~0.5% for standard BTC positions\n- KuCoin uses an insurance fund to cover bankrupt positions before ADL\n- Isolated margin mode recommended for most traders\n- KCS token holders get a 20% fee discount — relevant when calculating net trading costs\n\nKuCoin's futures platform is solid for mid-tier leverage trading (5–20×). For very high leverage (50×+), the platform's liquidity depth on altcoin pairs may be thinner than Binance or Bybit.`,
+    },
+  },
+
+  // --- Leverage: BingX Liquidation ---
+  {
+    slug: "bingx-liquidation-calculator",
+    parentSlug: "leverage-liquidation-calculator",
+    name: "BingX Liquidation Price Calculator",
+    shortName: "BingX Liquidation",
+    description: "Calculate your exact liquidation price on BingX perpetual swaps using BingX's maintenance margin rates.",
+    longDescription: "BingX-specific liquidation calculator for perpetual swap trading with up to 150× leverage.",
+    category: "leverage",
+    keywords: ["bingx liquidation calculator", "bingx liquidation price", "bingx perpetual swap liquidation", "bingx leverage calculator", "bingx futures liquidation"],
+    fields: [
+      { id: "entryPrice", label: "Entry Price", type: "number", unit: "USD", placeholder: "50000", min: 0.0001, step: 0.01, defaultValue: 50000 },
+      { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "10", min: 1, max: 150, step: 1, defaultValue: 10 },
+      { id: "direction", label: "Position Type", type: "select", options: [{ value: "long", label: "Long (Buy)" }, { value: "short", label: "Short (Sell)" }], defaultValue: "long" },
+      { id: "maintenanceMargin", label: "BingX Maintenance Margin", type: "number", unit: "%", placeholder: "0.5", min: 0, max: 5, step: 0.1, defaultValue: 0.5, helpText: "BingX BTC perpetual swap: ~0.5% maintenance margin for standard positions." },
+    ],
+    relatedSlugs: ["leverage-liquidation-calculator", "bingx-trading-fee-calculator", "bybit-liquidation-calculator"],
+    faqs: [
+      { question: "What is BingX's maintenance margin for BTC perpetual swaps?", answer: "BingX uses a tiered maintenance margin system for perpetual swaps. The base maintenance margin for BTC is approximately 0.5% for standard retail position sizes. BingX supports up to 150× leverage on major pairs." },
+      { question: "How does BingX copy trading affect liquidation risk?", answer: "When copy trading on BingX, you inherit the same leverage and position parameters as the trader you follow. This means you also inherit their liquidation risk. Always check what leverage the strategy uses before copying — high-leverage strategies can liquidate quickly during volatile markets." },
+    ],
+    educationContent: {
+      title: "BingX Perpetual Swaps: Liquidation and Copy Trading Risk",
+      body: `BingX is known for its copy trading feature, but the underlying perpetual swap mechanics follow standard industry practices. Liquidation occurs when margin balance falls below the maintenance margin requirement.\n\n**BingX liquidation facts:**\n- Uses mark price (not last price) for liquidation triggers\n- Maintenance margin: ~0.5% for standard BTC positions\n- Supports up to 150× leverage on perpetual swaps\n- Copy trading positions carry the same liquidation risk as manual positions\n\n**Copy trading warning:** Many high-performing copy strategies on BingX use 20–50× leverage to generate impressive short-term returns. These strategies are inherently fragile — a single bad trade can liquidate the position. Evaluate a strategy's maximum drawdown, not just its returns, before copying.`,
+    },
+  },
+
+  // --- Leverage: Phemex Liquidation ---
+  {
+    slug: "phemex-liquidation-calculator",
+    parentSlug: "leverage-liquidation-calculator",
+    name: "Phemex Liquidation Price Calculator",
+    shortName: "Phemex Liquidation",
+    description: "Calculate your exact liquidation price on Phemex perpetual contracts using Phemex's maintenance margin rates.",
+    longDescription: "Phemex-specific liquidation calculator for perpetual contract trading with up to 100× leverage.",
+    category: "leverage",
+    keywords: ["phemex liquidation calculator", "phemex liquidation price", "phemex perpetual liquidation", "phemex leverage calculator", "phemex futures liquidation"],
+    fields: [
+      { id: "entryPrice", label: "Entry Price", type: "number", unit: "USD", placeholder: "50000", min: 0.0001, step: 0.01, defaultValue: 50000 },
+      { id: "leverage", label: "Leverage", type: "number", unit: "x", placeholder: "10", min: 1, max: 100, step: 1, defaultValue: 10 },
+      { id: "direction", label: "Position Type", type: "select", options: [{ value: "long", label: "Long (Buy)" }, { value: "short", label: "Short (Sell)" }], defaultValue: "long" },
+      { id: "maintenanceMargin", label: "Phemex Maintenance Margin", type: "number", unit: "%", placeholder: "0.5", min: 0, max: 5, step: 0.1, defaultValue: 0.5, helpText: "Phemex BTC perpetual: ~0.5% maintenance margin for standard positions." },
+    ],
+    relatedSlugs: ["leverage-liquidation-calculator", "phemex-trading-fee-calculator", "bybit-liquidation-calculator"],
+    faqs: [
+      { question: "What is Phemex's maintenance margin for BTC perpetuals?", answer: "Phemex uses a tiered maintenance margin system. For BTC USD perpetual contracts, the base maintenance margin is approximately 0.5% for standard retail positions. Verify current rates in Phemex's contract specifications." },
+      { question: "Does Phemex Premium membership affect liquidation?", answer: "No — Phemex's premium membership only removes spot trading fees. Futures liquidation mechanics and maintenance margin requirements are identical for both standard and premium members." },
+    ],
+    educationContent: {
+      title: "Phemex Perpetual Contracts: Liquidation Mechanics",
+      body: `Phemex offers perpetual contracts on major crypto pairs with up to 100× leverage. Like other professional derivatives exchanges, Phemex uses mark price for liquidation to protect traders from order book manipulation.\n\n**Phemex liquidation details:**\n- Mark price used for liquidation (index price + funding basis)\n- Maintenance margin: ~0.5% for standard BTC positions\n- Phemex has a tiered system — larger positions require higher maintenance margin\n- Isolated margin mode is available and recommended for most traders\n\n**Phemex's unique angle:** The 0.010% maker fee on perpetuals is among the lowest available. Combined with careful position sizing, Phemex is a cost-efficient platform for limit-order futures traders who prioritize low fees over maximum liquidity depth.`,
     },
   },
 

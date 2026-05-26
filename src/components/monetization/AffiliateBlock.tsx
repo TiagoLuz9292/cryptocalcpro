@@ -47,9 +47,14 @@ export function AffiliateBlock({ category, exchange, className }: AffiliateBlock
 
   const isPropFirm = category === "prop-firm";
 
-  // For exchange blocks: split into featured (2 large) and secondary (rest)
-  const featuredKeys = isPropFirm ? [] : keys.filter((k) => FEATURED.includes(k));
-  const secondaryKeys = isPropFirm ? keys : keys.filter((k) => !FEATURED.includes(k));
+  // For exchange blocks: if a specific exchange is requested, feature it alone;
+  // otherwise feature Bybit + Binance as the default top two.
+  const featuredKeys = isPropFirm
+    ? []
+    : exchange && affiliateLinks[exchange]
+      ? [exchange]
+      : keys.filter((k) => FEATURED.includes(k));
+  const secondaryKeys = isPropFirm ? keys : keys.filter((k) => !featuredKeys.includes(k));
 
   const renderLink = (key: string, featured: boolean) => {
     const link = affiliateLinks[key];
